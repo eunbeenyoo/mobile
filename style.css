@@ -191,29 +191,25 @@ body {
 /* =========================================================
    SKILLS (검정 화면 / HTML 순서 유지)
 ========================================================= */
-/* ==== Skills: 일반 섹션처럼 자연 스크롤 ==== */
 .skills {
   background: #000;
   color: #fff;
   text-align: center;
-
-  min-height: auto; /* 높이 고정하지 않음 */
+  min-height: 100dvh;             /* 최신 브라우저 */
   padding-block: clamp(40px, 10vw, 120px);
   padding-inline: clamp(2px, 1.2vw, 10px);
 
-  /* 굳이 가운데 정렬 원하면 유지, 아니라면 아래 두 줄도 지워도 됨 */
   display: flex;
   flex-direction: column;
-  gap: clamp(10px, 3vw, 24px);
   justify-content: center;
+  gap: clamp(10px, 3vw, 24px);
 }
 
-/* 텍스트는 그대로 반응형 유지 */
 .skills-list li {
   font-weight: 800;
   letter-spacing: .02em;
-  font-size: clamp(19px, 11vw, 75px);
-  padding-inline: clamp(1px, 1vw, 8px);
+  font-size: clamp(19px, 11vw, 75px);    /* 뷰포트 기반 */
+  padding-inline: clamp(1px, 1vw, 8px);  /* 좌우 여백 살짝 */
   line-height: 1.2;
   text-align: center;
   word-break: keep-all;
@@ -324,4 +320,99 @@ footer {
     font-size: clamp(26px, 9vw, 92px);
     padding-inline: clamp(6px, 1.6vw, 14px);
   }
+}
+
+/* ===== Detail page (responsive) ===== */
+.detail-page{ background:#eaf3f6; }
+
+/* 타이틀 영역 */
+.detail-hero{
+  padding: clamp(16px, 6vw, 32px);
+}
+.detail-title{
+  font-weight: 800; letter-spacing:.2px; line-height:1.12;
+  font-size: clamp(28px, 8vw, 44px);
+}
+
+/* 메인 이미지 (홈 카드와 동일 느낌의 여백/둥근모서리) */
+.detail-media{ padding: 0 clamp(16px, 6vw, 32px); }
+.detail-figure{
+  margin:0; border-radius: 14px; overflow:hidden; background:#111;
+}
+.detail-figure img{
+  width:100%; display:block; aspect-ratio: 16 / 9; object-fit:cover;
+}
+
+/* 메타 카드(작품 유형/연도/프로젝트 유형) */
+.detail-meta{ padding: clamp(16px, 6vw, 28px); }
+.meta-list{
+  list-style:none; margin:0;
+  padding: clamp(12px, 4vw, 20px);
+  background:#fff; border-radius:16px;
+  box-shadow:0 10px 24px rgba(0,0,0,.08);
+  display:grid; gap: clamp(8px, 2.8vw, 12px);
+}
+.meta-list li span{
+  display:inline-block; font-weight:600; color:#111;
+  font-size: clamp(13px, 3.8vw, 16px);
+}
+
+/* 본문 */
+.detail-body{
+  padding: 0 clamp(16px, 6vw, 32px) clamp(28px, 10vw, 60px);
+}
+.detail-body h2{
+  font-weight:800; margin-bottom: clamp(10px, 2.8vw, 14px);
+  font-size: clamp(20px, 6vw, 30px);
+}
+.detail-body p{
+  color:#222; max-width: 72ch;
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: clamp(1.55, 4vw, 1.75);
+}
+
+/* 태블릿~데스크탑에서 약간 더 여유 */
+@media (min-width: 700px){
+  .meta-list{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .meta-list li{ text-align:center; }
+  .detail-body p{ max-width: 65ch; }
+}
+
+/* ===========================
+   태블릿 이상 (조금 더 여유롭게)
+=========================== */
+@media (min-width: 700px) {
+  .detail-title { font-size: clamp(36px, 5.8vw, 54px); }
+  .meta-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .meta-list li { text-align: center; }
+  .detail-body p { font-size: clamp(16px, 2vw, 18px); max-width: 60ch; }
+}
+
+/* 모든 디테일 이미지 기본 스타일 */
+.detail-figure {
+  margin: 0 0 20px 0;   /* 이미지 사이 여백 */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #111;
+}
+.detail-figure img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  object-fit: cover;   /* 비율 유지하면서 꽉 차게 */
+}
+
+/* sketch_wjs.png → 원본 비율 유지 */
+.detail-figure img[src*="sketch_wjs.png"] {
+  aspect-ratio: auto;  /* 비율 자동 (원래 비율) */
+  object-fit: contain; /* 잘리지 않고 다 보이게 */
+  background: #fff;    /* 여백 생길 경우 흰 배경 */
+}
+
+/* 나머지 face/front → 정사각형(1:1) */
+.detail-figure img[src*="face_wjs.png"],
+.detail-figure img[src*="front_gst.png"],
+.detail-figure img[src*="front_wjs.png"] {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
