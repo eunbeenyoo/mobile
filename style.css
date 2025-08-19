@@ -195,24 +195,32 @@ body {
   background: #000;
   color: #fff;
   text-align: center;
-  min-height: 100vh;   /* 기본 */
-  min-height: 100dvh;  /* 지원하는 브라우저 */
-  min-height: 100svh;  /* 일부 브라우저 fallback */
+
+  /* 1순위: 실제 내부 높이 기반(모바일 주소창 변동 대응) */
+  height: calc(var(--vh, 1vh) * 100);
+
+  /* 2~4순위 폴백: 브라우저 지원 상황별 */
+  height: 100dvh;  /* 최신 */
+  height: 100svh;  /* 일부 브라우저 */
+  height: 100vh;   /* 최종 폴백 */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: clamp(10px, 3vw, 24px);
+  padding-inline: clamp(2px, 1.2vw, 10px);
 }
 
+/* 목록 타이포 유지 */
 .skills-list li {
   font-weight: 800;
   letter-spacing: .02em;
-  font-size: clamp(19px, 11vw, 75px);    /* 뷰포트 기반 */
-  padding-inline: clamp(1px, 1vw, 8px);  /* 좌우 여백 살짝 */
+  font-size: clamp(19px, 11vw, 75px);
+  padding-inline: clamp(1px, 1vw, 8px);
   line-height: 1.2;
   text-align: center;
   word-break: keep-all;
 }
-
 /* =========================================================
    ABOUT (맨 하단 길게 / HTML 순서 유지)
 ========================================================= */
@@ -223,12 +231,18 @@ body {
 
 /* 하단 섹션을 길게(뷰포트 기준) */
 .about.about--long {
-  min-height: 140dvh;
+  /* 동일한 높이 전략 적용(완전 꽉 차게 하고 싶으면 100 대신 120~140으로 늘려도 됨) */
+  min-height: calc(var(--vh, 1vh) * 120);
+  min-height: 120dvh;
+  min-height: 120svh;
+  min-height: 120vh;
+
   padding-block: clamp(48px, 12vw, 160px);
   padding-inline: clamp(16px, 6vw, 48px);
   max-width: 1000px;
-  margin-inline: auto;
+  margin-inline: a
 }
+
 @supports not (height: 1dvh) { .about.about--long { min-height: 140svh; } }
 @supports not (height: 1svh) { .about.about--long { min-height: 140vh; } }
 
