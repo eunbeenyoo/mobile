@@ -187,25 +187,30 @@ body {
   .work-info { gap: 4px; }
 }
 
-
-/* =========================================================
-   SKILLS (검정 화면 / HTML 순서 유지)
-========================================================= */
 /* =========================================================
    SKILLS (검정 화면)
 ========================================================= */
-.skills {
-  background: #000;
-  color: #fff;
-  text-align: center;
+.skills{
+  background:#000; color:#fff; text-align:center;
+  min-height: 100svh;               /* 핵심 */
+  display:flex; flex-direction:column; justify-content:center;
+  gap: clamp(10px,3vw,24px);
+  padding-inline: clamp(2px,1.2vw,10px);
+}
+@supports (height: 100dvh){
+  .skills{ min-height: 100dvh; }     /* 최신 브라우저 보정 */
+}
 
-  /* 강제 height X → 안정적인 min-height만 */
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(10px, 3vw, 24px);
-  padding-inline: clamp(2px, 1.2vw, 10px);
+/* About(맨 하단): 살짝 길게만, 강제 고정 X */
+.about.about--long{
+  min-height: 120svh;
+  padding-block: clamp(48px,12vw,160px);
+  padding-inline: clamp(16px,6vw,48px);
+  max-width: 1000px;
+  margin-inline: auto;
+}
+@supports (height: 100dvh){
+  .about.about--long{ min-height: 120dvh; }
 }
 
 /* 목록 타이포 유지 */
