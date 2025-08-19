@@ -198,7 +198,7 @@ body {
   text-align: center;
 
   /* 화면 꽉 채우는 블록 느낌 유지 */
-  min-height: 100dvh;                   /* 최신 브라우저용 */
+  min-height: auto;           /* 최신 브라우저용 */
   padding-block: clamp(40px, 10vw, 120px);
   display: flex;
   flex-direction: column;
