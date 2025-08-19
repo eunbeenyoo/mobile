@@ -191,19 +191,16 @@ body {
 /* =========================================================
    SKILLS (검정 화면 / HTML 순서 유지)
 ========================================================= */
+/* =========================================================
+   SKILLS (검정 화면)
+========================================================= */
 .skills {
   background: #000;
   color: #fff;
   text-align: center;
 
-  /* 1순위: 실제 내부 높이 기반(모바일 주소창 변동 대응) */
-  height: calc(var(--vh, 1vh) * 100);
-
-  /* 2~4순위 폴백: 브라우저 지원 상황별 */
-  height: 100dvh;  /* 최신 */
-  height: 100svh;  /* 일부 브라우저 */
-  height: 100vh;   /* 최종 폴백 */
-
+  /* 강제 height X → 안정적인 min-height만 */
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -221,26 +218,22 @@ body {
   text-align: center;
   word-break: keep-all;
 }
+
 /* =========================================================
-   ABOUT (맨 하단 길게 / HTML 순서 유지)
+   ABOUT (맨 하단 길게)
 ========================================================= */
 .about {
   padding: 2rem 1rem;
   text-align: center;
 }
 
-/* 하단 섹션을 길게(뷰포트 기준) */
 .about.about--long {
-  /* 동일한 높이 전략 적용(완전 꽉 차게 하고 싶으면 100 대신 120~140으로 늘려도 됨) */
-  min-height: calc(var(--vh, 1vh) * 120);
-  min-height: 120dvh;
+  /* 화면보다 살짝 길게만 – 강제 맞춤 없이 자연 스크롤 */
   min-height: 120svh;
-  min-height: 120vh;
-
   padding-block: clamp(48px, 12vw, 160px);
   padding-inline: clamp(16px, 6vw, 48px);
   max-width: 1000px;
-  margin-inline: a
+  margin-inline: auto;   /* ← 오타 'a' 고침 */
 }
 
 @supports not (height: 1dvh) { .about.about--long { min-height: 140svh; } }
