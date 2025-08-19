@@ -1,9 +1,13 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* =========================================================
+   RESET & BASE
+========================================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  scroll-behavior: smooth;          /* 부드러운 스크롤 */
+  overscroll-behavior-y: contain;   /* 위아래 ‘튕김’ 최소화 */
 }
+
 body {
   font-family: Arial, sans-serif;
   background: #eaf3f6;
@@ -11,7 +15,10 @@ body {
   line-height: 1.6;
 }
 
-/* Header */
+
+/* =========================================================
+   HEADER (HTML 순서 유지)
+========================================================= */
 .header {
   display: flex;
   justify-content: space-between;
@@ -29,57 +36,57 @@ body {
   cursor: pointer;
 }
 
-/* Hero 영역: 반응형 타이포 + 여백 */
+
+/* =========================================================
+   HERO (HTML 순서 유지)
+========================================================= */
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* 텍스트 수직 가운데 */
-  align-items: center;       /* 텍스트 수평 가운데 */
-  min-height: 100vh;         /* 뷰포트 높이를 꽉 채움 */
+  justify-content: center;     /* 수직 가운데 */
+  align-items: center;         /* 수평 가운데 */
+  min-height: 100vh;           /* 뷰포트 꽉 채움 */
   padding: clamp(20px, 6vw, 60px);
 }
 
-/* "Hello!" 같은 큰 타이틀 */
+/* 큰 타이틀 */
 .hero .title {
   margin: 0;
   font-weight: 800;
   font-size: clamp(24px, 7vw, 36px);
   line-height: 1.12;
-  /* 제목 아래 살짝 간격 */
   margin-bottom: clamp(30px, 8vw, 20px);
 }
-
-/* "I'm Eunbeen" (또는 같은 줄/다음 줄 텍스트) */
+/* 서브 타이틀 */
 .hero .subtitle {
   margin: 0;
   font-weight: 500;
   font-size: clamp(16px, 4.8vw, 20px);
   line-height: 1.35;
-  /* ← 여기! 텍스트 아래 여백(반응형) */
   margin-bottom: clamp(60px, 10vw, 70px);
 }
-
-/* 만약 스크롤 안내 문구/아이콘이 있다면 */
+/* 스크롤 안내 */
 .hero .scroll {
   color: #666;
   font-size: clamp(12px, 3.6vw, 14px);
-  /* 필요하면 더 띄우기 */
   margin-top: clamp(8px, 3.2vw, 16px);
 }
 
-/* Works */
+
+/* =========================================================
+   WORKS (HTML 순서 유지)
+========================================================= */
 .works {
   padding: 2rem 1rem;
-  /* 섹션과 다음 섹션(검정 화면) 사이 여백 */
-  margin-bottom: clamp(40px, 8vw, 80px);
+  margin-bottom: clamp(40px, 8vw, 80px); /* 다음 섹션과 간격 */
 }
 
-/* 카드 기본 유지 */
+/* 카드 */
 .work-card {
   margin-top: clamp(12px, 3.5vw, 24px);
   border-radius: 12px;
   overflow: hidden;
-  position: relative; /* ← 이미지 안쪽 배치 기준 */
+  position: relative;          /* 오버레이 기준 */
 }
 .work-card img {
   width: 100%;
@@ -89,14 +96,14 @@ body {
   object-fit: cover;
 }
 
-/* ===== 연도: 이미지 안쪽 좌상단 배지 ===== */
+/* 연도 배지(좌상단, 이미지 내부) */
 .work-card::before {
-  content: "2024"; /* 카드별 다르면 아래 nth-of-type에서 바꿔도 됨 */
+  content: "2024"; /* 기본값 / 개별 변경은 nth-of-type 아래 */
   position: absolute;
   top: clamp(8px, 2.4vw, 14px);
   left: clamp(8px, 2.4vw, 14px);
   display: inline-block;
-  width: max-content; /* 텍스트 길이에 딱 맞게 */
+  width: max-content;
   background: rgba(0,0,0,0.9);
   color: #fff;
   padding: clamp(2px, 0.6vw, 6px) clamp(6px, 1.4vw, 10px);
@@ -106,13 +113,12 @@ body {
   line-height: 1;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
-
-/* (선택) 카드별로 연도 다르면 이렇게 개별 지정 가능 */
+/* 카드별 연도 */
 .work-card:nth-of-type(1)::before { content: "2025"; }
 .work-card:nth-of-type(2)::before { content: "2025"; }
 .work-card:nth-of-type(3)::before { content: "2024"; }
 
-/* ===== 제목: 좌하단 + 작품 타입 배지는 제목 아래 ===== */
+/* 오버레이(좌하단) : 제목 + 타입 배지(제목 아래) */
 .work-info {
   position: absolute;
   left: clamp(8px, 2.4vw, 16px);
@@ -124,7 +130,7 @@ body {
   text-shadow: 0 2px 6px rgba(0,0,0,0.35);
 }
 
-/* 제목 자체를 반응형 */
+/* 제목 */
 .work-info .title {
   font-weight: 800;
   letter-spacing: 0.2px;
@@ -134,21 +140,22 @@ body {
   display: inline-block;
 }
 
-/* 작품 타입 배지: "제목 아래"에 표시 (HTML 안 건드림) */
+/* 작품 타입 배지 (제목 ‘아래’ 블록) */
 .work-info .title::after {
   content: "";
-  display: inline-block;
+  display: block; /* 제목 아래 줄로 떨어뜨림 */
   margin-top: clamp(4px, 1vw, 8px);
+  width: fit-content;
   padding: clamp(4px, 1vw, 6px) clamp(8px, 1.6vw, 12px);
   border-radius: 999px;
   font-weight: 800;
   font-size: clamp(10px, 3vw, 12px);
   line-height: 1;
   color: #111;
-  background: #ddd; /* 기본값(카드별로 아래서 덮어씀) */
+  background: #ddd; /* 기본값(카드별로 덮어씀) */
 }
 
-/* 카드별 타입 텍스트/색상 지정 */
+/* 카드별 타입 텍스트/색상 */
 .work-card:nth-of-type(1) .work-info .title::after {
   content: "3D Design";
   background: #ff9ad9; color: #1a0b17;
@@ -162,18 +169,18 @@ body {
   background: #cbb7ff; color: #23164b;
 }
 
-/* 작품 타입 배지: 제목 "아래" 표시 */
-.work-info .title::after {
-  display: block; /* ← inline-block → block 으로 변경 */
-  margin-top: clamp(4px, 1vw, 8px);
-  width: fit-content; /* 내용 길이에 맞춤 */
-  padding: clamp(4px, 1vw, 6px) clamp(8px, 1.6vw, 12px);
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: clamp(10px, 3vw, 12px);
-  line-height: 1;
-  color: #111;
-  background: #ddd; /* 기본값(카드별로 아래서 덮어씀) */
+/* (옵션) Works 카드 오른쪽 아래 ‘DETAILS’ 버튼 */
+.details-btn {
+  position: absolute;
+  right: clamp(10px, 2.4vw, 16px);
+  bottom: clamp(10px, 2.4vw, 16px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+  color: #fff;
+  font-size: clamp(10px, 2.6vw, 14px);
 }
 
 /* 초소형 화면 보정 */
@@ -181,62 +188,88 @@ body {
   .work-info { gap: 4px; }
 }
 
-/* Skills */
+
+/* =========================================================
+   SKILLS (검정 화면 / HTML 순서 유지)
+========================================================= */
 .skills {
   background: #000;
   color: #fff;
   text-align: center;
 
-  /* 핵심: 화면 1.6~2배 길이 */
-  min-height: 100dvh;           /* 최신 브라우저용 */
+  /* 화면 꽉 채우는 블록 느낌 유지 */
+  min-height: 100dvh;                   /* 최신 브라우저용 */
   padding-block: clamp(40px, 10vw, 120px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-inline: clamp(2px, 1.2vw, 10px)
+  padding-inline: clamp(2px, 1.2vw, 10px);
 }
-
-/* 폴백 */
-@supports not (height: 1dvh) {
-  .skills { min-height: 170svh; }
-}
-@supports not (height: 1svh) {
-  .skills { min-height: 170vh; }
-}
-
-html, body {
-  scroll-behavior: smooth;
-}
+@supports not (height: 1dvh) { .skills { min-height: 170svh; } }
+@supports not (height: 1svh) { .skills { min-height: 170vh; } }
 
 .skills-list li {
   font-weight: 800;
   letter-spacing: .02em;
-
-  /* 뷰포트 너비 기반으로 크기 조절 (반응형) */
-  font-size: clamp(19px, 11vw, 75px);
-
-  /* 좌우 여백 최소화 (너무 붙으면 답답하니까 살짝만) */
-  padding-inline: clamp(1px, 1vw, 8px);
-
+  font-size: clamp(19px, 11vw, 75px);    /* 뷰포트 기반 */
+  padding-inline: clamp(1px, 1vw, 8px);  /* 좌우 여백 살짝 */
   line-height: 1.2;
-  text-align: center; /* 단어 줄바꿈 균일 */
-  word-break: keep-all; /* 단어 단위 유지 */
+  text-align: center;
+  word-break: keep-all;
 }
 
-/* About */
+
+/* =========================================================
+   ABOUT (맨 하단 길게 / HTML 순서 유지)
+========================================================= */
 .about {
   padding: 2rem 1rem;
   text-align: center;
 }
-.about .profile-pic {
+
+/* 하단 섹션을 길게(뷰포트 기준) */
+.about.about--long {
+  min-height: 140dvh;
+  padding-block: clamp(48px, 12vw, 160px);
+  padding-inline: clamp(16px, 6vw, 48px);
+  max-width: 1000px;
+  margin-inline: auto;
+}
+@supports not (height: 1dvh) { .about.about--long { min-height: 140svh; } }
+@supports not (height: 1svh) { .about.about--long { min-height: 140vh; } }
+
+/* 동그라미(프로필 자리) */
+.about-spot {
   width: 100px;
   height: 100px;
+  border-radius: 50%;
+  background: #ccc;
+  margin: 1.5rem auto;
+}
+
+/* 기본 프로필 플레이스홀더 (사용 중이면 유지) */
+.about .profile-pic {
+  width: 100px; height: 100px;
   border-radius: 50%;
   background: #ccc;
   margin: 1rem auto;
 }
 
-/* Footer */
+/* 태블릿 이상에서 About 텍스트 살짝 키우기(가독 향상) */
+@media (min-width: 700px) {
+  .about.about--long h2 {
+    font-size: clamp(24px, 3.2vw, 36px);
+    margin-bottom: clamp(12px, 2vw, 20px);
+  }
+  .about.about--long p {
+    font-size: clamp(14px, 1.8vw, 18px);
+  }
+}
+
+
+/* =========================================================
+   FOOTER (HTML 순서 유지)
+========================================================= */
 footer {
   text-align: center;
   padding: 1rem;
@@ -244,12 +277,13 @@ footer {
   color: #000000;
 }
 
-/* ===========================
-   Tablet booster (iPad Air 등)
-   700px ~ 1024px: Works 텍스트/배지/년도 크게
-   =========================== */
+
+/* =========================================================
+   TABLET BOOSTER (iPad Air 등 / 700~1024px)
+   — 요청대로 맨 하단에 유지 —
+========================================================= */
 @media (min-width: 700px) and (max-width: 1024px) {
-  /* Hero 타이포(살짝 업) */
+  /* Hero 타이포 */
   .hero .title {
     font-size: clamp(34px, 6.2vw, 46px);
     margin-bottom: clamp(28px, 5vw, 36px);
@@ -258,47 +292,34 @@ footer {
     font-size: clamp(20px, 4vw, 26px);
     margin-bottom: clamp(52px, 8vw, 72px);
   }
-  .hero .scroll {
-    font-size: clamp(14px, 2.8vw, 16px);
-  }
+  .hero .scroll { font-size: clamp(14px, 2.8vw, 16px); }
 
   /* 섹션 타이틀 */
-  .works h2 {
-    font-size: clamp(24px, 4.8vw, 34px);
-  }
+  .works h2 { font-size: clamp(24px, 4.8vw, 34px); }
 
-  /* ===== 카드 오버레이(연도/제목/배지) ===== */
-  /* 연도 배지: 이미지 안쪽 좌상단 */
+  /* Works 오버레이(연도/제목/배지) 업스케일 */
   .work-card::before {
-    /* 네가 지정한 연도 content는 위쪽에 이미 있음 (nth-of-type 유지) */
     font-size: clamp(13px, 2.4vw, 16px);
     padding: clamp(6px, 1.1vw, 10px) clamp(12px, 1.8vw, 16px);
     top: clamp(12px, 2.4vw, 20px);
     left: clamp(12px, 2.4vw, 20px);
   }
-
-  /* 제목/배지 위치 여유 있게 */
   .work-info {
     left: clamp(14px, 2.8vw, 24px);
     bottom: clamp(14px, 2.8vw, 24px);
     gap: clamp(8px, 1.8vw, 12px);
   }
-
-  /* 작품 제목 */
   .work-info .title {
     font-size: clamp(18px, 4.2vw, 26px);
     line-height: 1.22;
   }
-
-  /* 작품 타입 배지 (제목 아래 블록) */
   .work-info .title::after {
     font-size: clamp(13px, 3.2vw, 16px);
     padding: clamp(8px, 1.4vw, 12px) clamp(14px, 2.2vw, 20px);
     margin-top: clamp(8px, 1.6vw, 12px);
-    /* width: fit-content; 는 그대로 둠 */
   }
 
-  /* Skills(검정 화면)도 태블릿에서 조금 더 큼지막하게 */
+  /* Skills(검정 화면)도 큼지막하게 */
   .skills-list li {
     font-size: clamp(26px, 9vw, 92px);
     padding-inline: clamp(6px, 1.6vw, 14px);
