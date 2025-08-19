@@ -204,12 +204,8 @@ body {
   .skills { min-height: 170vh; }
 }
 
-/* 부드러운 섹션 스냅(선택 but 추천) */
-main{
-  scroll-snap-type: y mandatory;
-}
-.fullscreen{
-  scroll-snap-align: start;
+html, body {
+  scroll-behavior: smooth;
 }
 
 .skills-list li {
