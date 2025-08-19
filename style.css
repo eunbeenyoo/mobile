@@ -5,7 +5,6 @@
 
 html, body {
   scroll-behavior: smooth;          /* 부드러운 스크롤 */
-  overscroll-behavior-y: contain;   /* 위아래 ‘튕김’ 최소화 */
 }
 
 body {
@@ -192,32 +191,33 @@ body {
 /* =========================================================
    SKILLS (검정 화면 / HTML 순서 유지)
 ========================================================= */
+/* ==== Skills: 일반 섹션처럼 자연 스크롤 ==== */
 .skills {
   background: #000;
   color: #fff;
   text-align: center;
 
-  /* 화면 꽉 채우는 블록 느낌 유지 */
-  min-height: auto;           /* 최신 브라우저용 */
+  min-height: auto; /* 높이 고정하지 않음 */
   padding-block: clamp(40px, 10vw, 120px);
+  padding-inline: clamp(2px, 1.2vw, 10px);
+
+  /* 굳이 가운데 정렬 원하면 유지, 아니라면 아래 두 줄도 지워도 됨 */
   display: flex;
   flex-direction: column;
+  gap: clamp(10px, 3vw, 24px);
   justify-content: center;
-  padding-inline: clamp(2px, 1.2vw, 10px);
 }
-@supports not (height: 1dvh) { .skills { min-height: 170svh; } }
-@supports not (height: 1svh) { .skills { min-height: 170vh; } }
 
+/* 텍스트는 그대로 반응형 유지 */
 .skills-list li {
   font-weight: 800;
   letter-spacing: .02em;
-  font-size: clamp(19px, 11vw, 75px);    /* 뷰포트 기반 */
-  padding-inline: clamp(1px, 1vw, 8px);  /* 좌우 여백 살짝 */
+  font-size: clamp(19px, 11vw, 75px);
+  padding-inline: clamp(1px, 1vw, 8px);
   line-height: 1.2;
   text-align: center;
   word-break: keep-all;
 }
-
 
 /* =========================================================
    ABOUT (맨 하단 길게 / HTML 순서 유지)
