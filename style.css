@@ -195,14 +195,12 @@ body {
   background: #000;
   color: #fff;
   text-align: center;
-  min-height: 100dvh;             /* 최신 브라우저 */
-  padding-block: clamp(40px, 10vw, 120px);
-  padding-inline: clamp(2px, 1.2vw, 10px);
-
+  min-height: 100vh;   /* 기본 */
+  min-height: 100dvh;  /* 지원하는 브라우저 */
+  min-height: 100svh;  /* 일부 브라우저 fallback */
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: clamp(10px, 3vw, 24px);
 }
 
 .skills-list li {
