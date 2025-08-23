@@ -34,28 +34,51 @@
       <p class="scroll">↓ scroll to explore</p>
     </section>
 
-    <!-- Works -->
-    <section class="works" id="portfolio">
-      <h2>Selected Works</h2>
-      <div class="work-card">
-        <a href="works/jangseung.html" class="work-card-link" aria-label="Open Wandering Jangseung details">
-          <img src="images/wandering_jangseung.png" alt="Wandering Jangseung">
-          <div class="work-info"><div class="title">Wandering Jangseung</div></div>
-        </a>
-      </div>
-      <div class="work-card">
-        <a href="works/earth-piece.html" class="work-card-link" aria-label="Open Earth Piece details">
-          <img src="images/earth_piece.jpeg" alt="Earth Piece">
-          <div class="work-info"><div class="title">Earth Piece</div></div>
-        </a>
-      </div>
-      <div class="work-card">
-        <a href="works/out-of-an-egg.html" class="work-card-link" aria-label="Open Out of an egg details">
-          <img src="images/out_of_an_egg.png" alt="Out of an egg">
-          <div class="work-info"><div class="title">Out of an egg</div></div>
-        </a>
-      </div>
-    </section>
+    <!--------- Works ----------->
+<section class="works" id="portfolio">
+  <h2>Selected Works</h2>
+  <p class="works-sub">
+    Take a look at some of my projects ✦ Each piece showcases my creative journey and
+    dedication to transforming ideas into visually compelling stories.
+  </p>
+  <!-- 기존 카드들 계속 -->
+
+  <!-- Wandering Jangseung -->
+  <div class="work-card">
+    <a href="works/jangseung.html" class="work-card-link" aria-label="Open Wandering Jangseung details">
+      <img src="images/wandering_jangseung.png" alt="Wandering Jangseung">
+      <div class="work-info"><div class="title">Wandering Jangseung</div></div>
+      <!-- details.svg 아이콘 -->
+      <span class="details-btn">
+        <img src="images/details.svg" alt="Details">
+      </span>
+    </a>
+  </div>
+
+  <!-- Earth Piece -->
+  <div class="work-card">
+    <a href="works/earth-piece.html" class="work-card-link" aria-label="Open Earth Piece details">
+      <img src="images/earth_piece.jpeg" alt="Earth Piece">
+      <div class="work-info"><div class="title">Earth Piece</div></div>
+      <!-- details.svg 아이콘 -->
+      <span class="details-btn">
+        <img src="images/details.svg" alt="Details">
+      </span>
+    </a>
+  </div>
+
+  <!-- Out of an egg -->
+  <div class="work-card">
+    <a href="works/out-of-an-egg.html" class="work-card-link" aria-label="Open Out of an egg details">
+      <img src="images/out_of_an_egg.png" alt="Out of an egg">
+      <div class="work-info"><div class="title">Out of an egg</div></div>
+      <!-- details.svg 아이콘 -->
+      <span class="details-btn">
+        <img src="images/details.svg" alt="Details">
+      </span>
+    </a>
+  </div>
+</section>
 
     <!-- Skills -->
     <section class="skills">
@@ -91,7 +114,6 @@
     setVh(); window.addEventListener('resize', setVh); window.addEventListener('orientationchange', setVh);
   </script>
 
-  <!-- 메뉴 토글 스크립트 -->
   <script>
     const menuBtn = document.querySelector('.menu-btn');
     const overlay = document.getElementById('menuOverlay');
@@ -116,5 +138,45 @@
     });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   </script>
+  <script>
+  // Skills 섹션 원형 리빌
+  const skillsSection = document.querySelector('.skills');
+  if (skillsSection){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if (e.isIntersecting){
+          // 들어온 "그 순간"에만 마스킹 + 리빌을 동시에 적용
+          skillsSection.classList.add('mask','revealed');
+          io.unobserve(skillsSection);
+        }
+      });
+    }, {threshold: 0.15});
+    io.observe(skillsSection);
+  }
+
+  // 중앙 항목만 흰색 유지 (그대로)
+  const skillItems = [...document.querySelectorAll('.skills .skills-list li')];
+  if (skillItems.length){
+    let ticking = false;
+    const highlightCenter = () => {
+      ticking = false;
+      const mid = window.innerHeight / 2;
+      const rectS = skillsSection.getBoundingClientRect();
+      const onScreen = rectS.bottom > 0 && rectS.top < window.innerHeight;
+      if (!onScreen){ skillItems.forEach(li=>li.classList.remove('active')); return; }
+      let bestIdx = 0, bestD = Infinity;
+      skillItems.forEach((li, i)=>{
+        const r = li.getBoundingClientRect();
+        const d = Math.abs((r.top + r.height/2) - mid);
+        if (d < bestD){ bestD = d; bestIdx = i; }
+      });
+      skillItems.forEach((li, i)=>li.classList.toggle('active', i === bestIdx));
+    };
+    const onScroll = () => { if (!ticking){ requestAnimationFrame(highlightCenter); ticking = true; } };
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    onScroll();
+  }
+</script>
 </body>
 </html>
