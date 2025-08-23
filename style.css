@@ -655,3 +655,23 @@ body.no-scroll{ overflow: hidden; }
   color: #fff;
   transform: scale(1.02);
 }
+
+/* Skills 섹션을 GPU 레이어로 승격 (리페인트 비용↓) */
+.skills{
+  transform: translateZ(0);
+  contain: paint;           /* 이 섹션 안쪽만 다시 그리기 */
+  backface-visibility: hidden;
+}
+
+/* 애니 동안에만 will-change 켜기 (항상 켜두면 오히려 느려짐) */
+.skills.mask.animating{
+  will-change: clip-path, -webkit-clip-path;
+}
+
+/* 애니메이션 시간 약간 짧게(원하면 유지 가능) */
+@keyframes skills-reveal{
+  to{
+    clip-path: circle(150vmax at 50% 100%);
+    -webkit-clip-path: circle(150vmax at 50% 100%);
+  }
+}
