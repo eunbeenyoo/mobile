@@ -4,7 +4,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html, body {
-  scroll-behavior: smooth;          /* 부드러운 스크롤 */
+  scroll-behavior: smooth; 
 }
 
 body {
@@ -16,13 +16,14 @@ body {
 
 
 /* =========================================================
-   HEADER (HTML 순서 유지)
+   HEADER
 ========================================================= */
 .header {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
 }
+
 .contact-btn {
   padding: 6px 12px;
   border: 1px solid #a36ef7;
@@ -30,6 +31,7 @@ body {
   background: #fff;
   color: #a36ef7;
 }
+
 .menu-icon {
   font-size: 20px;
   cursor: pointer;
@@ -37,18 +39,17 @@ body {
 
 
 /* =========================================================
-   HERO (HTML 순서 유지)
+   HERO
 ========================================================= */
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;     /* 수직 가운데 */
-  align-items: center;         /* 수평 가운데 */
-  min-height: 100vh;           /* 뷰포트 꽉 채움 */
+  justify-content: center; 
+  align-items: center; 
+  min-height: 100vh;        
   padding: clamp(20px, 6vw, 60px);
 }
 
-/* 큰 타이틀 */
 .hero .title {
   margin: 0;
   font-weight: 800;
@@ -56,7 +57,7 @@ body {
   line-height: 1.12;
   margin-bottom: clamp(30px, 8vw, 20px);
 }
-/* 서브 타이틀 */
+
 .hero .subtitle {
   margin: 0;
   font-weight: 500;
@@ -64,7 +65,7 @@ body {
   line-height: 1.35;
   margin-bottom: clamp(60px, 10vw, 70px);
 }
-/* 스크롤 안내 */
+
 .hero .scroll {
   color: #666;
   font-size: clamp(12px, 3.6vw, 14px);
@@ -73,20 +74,20 @@ body {
 
 
 /* =========================================================
-   WORKS (HTML 순서 유지)
+   WORKS
 ========================================================= */
 .works {
   padding: 2rem 1rem;
   margin-bottom: clamp(40px, 8vw, 80px); /* 다음 섹션과 간격 */
 }
 
-/* 카드 */
 .work-card {
   margin-top: clamp(12px, 3.5vw, 24px);
   border-radius: 12px;
   overflow: hidden;
-  position: relative;          /* 오버레이 기준 */
+  position: relative; 
 }
+
 .work-card img {
   width: 100%;
   border-radius: 12px;
@@ -95,9 +96,9 @@ body {
   object-fit: cover;
 }
 
-/* 연도 배지(좌상단, 이미지 내부) */
+/* years (card) */
 .work-card::before {
-  content: "2024"; /* 기본값 / 개별 변경은 nth-of-type 아래 */
+  content: "2024";
   position: absolute;
   top: clamp(8px, 2.4vw, 14px);
   left: clamp(8px, 2.4vw, 14px);
@@ -112,12 +113,12 @@ body {
   line-height: 1;
   text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
-/* 카드별 연도 */
+
 .work-card:nth-of-type(1)::before { content: "2025"; }
 .work-card:nth-of-type(2)::before { content: "2025"; }
 .work-card:nth-of-type(3)::before { content: "2024"; }
 
-/* 오버레이(좌하단) : 제목 + 타입 배지(제목 아래) */
+/* overlay title & type */
 .work-info {
   position: absolute;
   left: clamp(8px, 2.4vw, 16px);
@@ -129,8 +130,9 @@ body {
   text-shadow: 0 2px 6px rgba(0,0,0,0.35);
 }
 
-/* 제목 */
+/* Title */
 .work-info .title {
+  text-align: center;
   font-weight: 800;
   letter-spacing: 0.2px;
   font-size: clamp(13px, 4vw, 18px);
@@ -139,10 +141,9 @@ body {
   display: inline-block;
 }
 
-/* 작품 타입 배지 (제목 ‘아래’ 블록) */
+/* works - types */
 .work-info .title::after {
-  content: "";
-  display: block; /* 제목 아래 줄로 떨어뜨림 */
+  display: block;
   margin-top: clamp(4px, 1vw, 8px);
   width: fit-content;
   padding: clamp(4px, 1vw, 6px) clamp(8px, 1.6vw, 12px);
@@ -151,10 +152,10 @@ body {
   font-size: clamp(10px, 3vw, 12px);
   line-height: 1;
   color: #111;
-  background: #ddd; /* 기본값(카드별로 덮어씀) */
+  background: #ddd;
 }
 
-/* 카드별 타입 텍스트/색상 */
+/* text color (type) */
 .work-card:nth-of-type(1) .work-info .title::after {
   content: "3D Design";
   background: #ff9ad9; color: #1a0b17;
@@ -168,7 +169,7 @@ body {
   background: #cbb7ff; color: #23164b;
 }
 
-/* (옵션) Works 카드 오른쪽 아래 ‘DETAILS’ 버튼 */
+/* details button */
 .details-btn {
   position: absolute;
   right: clamp(10px, 2.4vw, 16px);
@@ -182,38 +183,24 @@ body {
   font-size: clamp(10px, 2.6vw, 14px);
 }
 
-/* 초소형 화면 보정 */
 @media (max-width: 360px){
   .work-info { gap: 4px; }
 }
 
 /* =========================================================
-   SKILLS (검정 화면)
+   SKILLS (black)
 ========================================================= */
 .skills{
   background:#000; color:#fff; text-align:center;
-  min-height: 100svh;               /* 핵심 */
+  min-height: 100svh; 
   display:flex; flex-direction:column; justify-content:center;
   gap: clamp(10px,3vw,24px);
   padding-inline: clamp(2px,1.2vw,10px);
 }
 @supports (height: 100dvh){
-  .skills{ min-height: 100dvh; }     /* 최신 브라우저 보정 */
+  .skills{ min-height: 100dvh; } 
 }
 
-/* About(맨 하단): 살짝 길게만, 강제 고정 X */
-.about.about--long{
-  min-height: 120svh;
-  padding-block: clamp(48px,12vw,160px);
-  padding-inline: clamp(16px,6vw,48px);
-  max-width: 1000px;
-  margin-inline: auto;
-}
-@supports (height: 100dvh){
-  .about.about--long{ min-height: 120dvh; }
-}
-
-/* 목록 타이포 유지 */
 .skills-list li {
   font-weight: 800;
   letter-spacing: .02em;
@@ -225,7 +212,7 @@ body {
 }
 
 /* =========================================================
-   ABOUT (맨 하단 길게)
+   ABOUT
 ========================================================= */
 .about {
   padding: 2rem 1rem;
@@ -233,18 +220,17 @@ body {
 }
 
 .about.about--long {
-  /* 화면보다 살짝 길게만 – 강제 맞춤 없이 자연 스크롤 */
   min-height: 120svh;
   padding-block: clamp(48px, 12vw, 160px);
   padding-inline: clamp(16px, 6vw, 48px);
   max-width: 1000px;
-  margin-inline: auto;   /* ← 오타 'a' 고침 */
+  margin-inline: auto;
 }
 
 @supports not (height: 1dvh) { .about.about--long { min-height: 140svh; } }
 @supports not (height: 1svh) { .about.about--long { min-height: 140vh; } }
 
-/* 동그라미(프로필 자리) */
+/* ciircle - profile */
 .about-spot {
   width: 100px;
   height: 100px;
@@ -253,7 +239,7 @@ body {
   margin: 1.5rem auto;
 }
 
-/* 기본 프로필 플레이스홀더 (사용 중이면 유지) */
+/* profile placeholder */
 .about .profile-pic {
   width: 100px; height: 100px;
   border-radius: 50%;
@@ -261,7 +247,7 @@ body {
   margin: 1rem auto;
 }
 
-/* 태블릿 이상에서 About 텍스트 살짝 키우기(가독 향상) */
+/* tablet - about */
 @media (min-width: 700px) {
   .about.about--long h2 {
     font-size: clamp(24px, 3.2vw, 36px);
@@ -272,9 +258,21 @@ body {
   }
 }
 
+/* About */
+.about.about--long{
+  min-height: 120svh;
+  padding-block: clamp(48px,12vw,160px);
+  padding-inline: clamp(16px,6vw,48px);
+  max-width: 1000px;
+  margin-inline: auto;
+}
+@supports (height: 100dvh){
+  .about.about--long{ min-height: 120dvh; }
+}
+
 
 /* =========================================================
-   FOOTER (HTML 순서 유지)
+   FOOTER
 ========================================================= */
 footer {
   text-align: center;
@@ -285,8 +283,7 @@ footer {
 
 
 /* =========================================================
-   TABLET BOOSTER (iPad Air 등 / 700~1024px)
-   — 요청대로 맨 하단에 유지 —
+   TABLET
 ========================================================= */
 @media (min-width: 700px) and (max-width: 1024px) {
   /* Hero 타이포 */
@@ -300,10 +297,10 @@ footer {
   }
   .hero .scroll { font-size: clamp(14px, 2.8vw, 16px); }
 
-  /* 섹션 타이틀 */
+  /* section title */
   .works h2 { font-size: clamp(24px, 4.8vw, 34px); }
 
-  /* Works 오버레이(연도/제목/배지) 업스케일 */
+  /* Works overlay */
   .work-card::before {
     font-size: clamp(13px, 2.4vw, 16px);
     padding: clamp(6px, 1.1vw, 10px) clamp(12px, 1.8vw, 16px);
@@ -325,35 +322,57 @@ footer {
     margin-top: clamp(8px, 1.6vw, 12px);
   }
 
-  /* Skills(검정 화면)도 큼지막하게 */
+  /* Skills */
   .skills-list li {
     font-size: clamp(26px, 9vw, 92px);
     padding-inline: clamp(6px, 1.6vw, 14px);
   }
 }
 
-/* ===== Detail page (responsive) ===== */
-.detail-page{ background:#eaf3f6; }
+/* ===== Detail pages ===== */
+.detail-page { background:#eaf3f6; }
 
-/* 타이틀 영역 */
-.detail-hero{
-  padding: clamp(16px, 6vw, 32px);
-}
+/* Title */
+.detail-hero { padding: clamp(16px, 6vw, 32px); }
 .detail-title{
   font-weight: 800; letter-spacing:.2px; line-height:1.12;
   font-size: clamp(28px, 8vw, 44px);
+  text-align: center;
 }
 
-/* 메인 이미지 (홈 카드와 동일 느낌의 여백/둥근모서리) */
-.detail-media{ padding: 0 clamp(16px, 6vw, 32px); }
+.detail-media { padding: 0 clamp(16px, 6vw, 32px); }
+.detail-body  { padding: 0 clamp(16px, 6vw, 32px) clamp(28px, 10vw, 60px); }
+
 .detail-figure{
-  margin:0; border-radius: 14px; overflow:hidden; background:#111;
-}
-.detail-figure img{
-  width:100%; display:block; aspect-ratio: 16 / 9; object-fit:cover;
+  margin: 0 0 20px 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: transparent; 
 }
 
-/* 메타 카드(작품 유형/연도/프로젝트 유형) */
+/* 이미지: 모서리 둥글게 + 꽉 채우기 */
+.detail-figure img{
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  object-fit: cover;
+  /* 필요하면 비율 지정: 기본은 자유 */
+}
+
+/* Description 영역 전용 간격: 제목/문단 다음 첫 이미지 위 여백 */
+.detail-body h2 { 
+  font-weight:800; margin-bottom: clamp(10px, 2.8vw, 14px);
+  font-size: clamp(20px, 6vw, 30px);
+}
+.detail-body p{
+  color:#222; max-width: 72ch;
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: clamp(1.55, 4vw, 1.75);
+}
+.detail-body .detail-figure:first-of-type { margin-top: 32px; }  /* Description ‘바로 아래’ 이미지 위 여백 */
+.detail-body .detail-figure + .detail-figure { margin-top: 20px; } /* 연속 이미지 간 간격 */
+
+/* Meta 카드 */
 .detail-meta{ padding: clamp(16px, 6vw, 28px); }
 .meta-list{
   list-style:none; margin:0;
@@ -367,29 +386,33 @@ footer {
   font-size: clamp(13px, 3.8vw, 16px);
 }
 
-/* 본문 */
-.detail-body{
-  padding: 0 clamp(16px, 6vw, 32px) clamp(28px, 10vw, 60px);
+.detail-figure img[src*="sketch_wjs.png"] {
+  aspect-ratio: auto;
+  object-fit: contain;   /* 잘리지 않게 */
+  background: #fff;      /* 여백 부분 흰색 */
 }
-.detail-body h2{
-  font-weight:800; margin-bottom: clamp(10px, 2.8vw, 14px);
-  font-size: clamp(20px, 6vw, 30px);
-}
-.detail-body p{
-  color:#222; max-width: 72ch;
-  font-size: clamp(14px, 4vw, 18px);
-  line-height: clamp(1.55, 4vw, 1.75);
+.detail-figure img[src*="face_wjs.png"],
+.detail-figure img[src*="front_gst.png"],
+.detail-figure img[src*="front_wjs.png"] {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
-/* 태블릿~데스크탑에서 약간 더 여유 */
+/* 태블릿 이상 */
 @media (min-width: 700px){
   .meta-list{ grid-template-columns: repeat(3, minmax(0,1fr)); }
   .meta-list li{ text-align:center; }
   .detail-body p{ max-width: 65ch; }
 }
+@media (min-width: 700px) {
+  .detail-title { font-size: clamp(36px, 5.8vw, 54px); }
+  .meta-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .meta-list li { text-align: center; }
+  .detail-body p { font-size: clamp(16px, 2vw, 18px); max-width: 60ch; }
+}
 
 /* ===========================
-   태블릿 이상 (조금 더 여유롭게)
+   Tablet
 =========================== */
 @media (min-width: 700px) {
   .detail-title { font-size: clamp(36px, 5.8vw, 54px); }
@@ -398,9 +421,9 @@ footer {
   .detail-body p { font-size: clamp(16px, 2vw, 18px); max-width: 60ch; }
 }
 
-/* 모든 디테일 이미지 기본 스타일 */
+/* details images */
 .detail-figure {
-  margin: 0 0 20px 0;   /* 이미지 사이 여백 */
+  margin: 0 0 20px 0;
   border-radius: 14px;
   overflow: hidden;
   background: #111;
@@ -409,20 +432,151 @@ footer {
   width: 100%;
   display: block;
   border-radius: 14px;
-  object-fit: cover;   /* 비율 유지하면서 꽉 차게 */
+  object-fit: cover;
 }
 
-/* sketch_wjs.png → 원본 비율 유지 */
 .detail-figure img[src*="sketch_wjs.png"] {
-  aspect-ratio: auto;  /* 비율 자동 (원래 비율) */
-  object-fit: contain; /* 잘리지 않고 다 보이게 */
-  background: #fff;    /* 여백 생길 경우 흰 배경 */
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: #fff;
 }
 
-/* 나머지 face/front → 정사각형(1:1) */
 .detail-figure img[src*="face_wjs.png"],
 .detail-figure img[src*="front_gst.png"],
 .detail-figure img[src*="front_wjs.png"] {
   aspect-ratio: 1 / 1;
   object-fit: cover;
+}
+
+/* ------------earth piece------------*/
+/* Horizontal scroll strip */
+.detail-strip {
+  padding: 1rem 0;
+}
+
+.strip-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.strip-title {
+  font-weight: 700;
+  font-size: clamp(14px, 2.5vw, 18px);
+}
+
+.strip-hint {
+  font-size: clamp(12px, 2vw, 14px);
+  color: #666;
+}
+
+.h-scroll {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 1rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.detail-thumb {
+  flex: 0 0 75%;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.detail-thumb img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+html, body.detail-page {
+  overscroll-behavior-y: none; 
+}
+
+body.detail-page {
+  overflow-x: hidden; 
+}
+
+.h-scroll {
+  overscroll-behavior-x: contain;
+}
+
+.detail,
+.detail-hero,
+.detail-media,
+.detail-body {
+  min-height: auto;
+}
+
+/* 헤더 햄버거 버튼: 테두리/배경 제거, 아이콘만 */
+.menu-btn{
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  color: #111;
+  /* 안전장치: 시스템 기본 스타일 제거 */
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+}
+.menu-btn:focus{ outline: none; }
+.menu-icon{ font-size: 24px; }
+
+/* 오버레이 기본 */
+.menu-overlay{
+  position: fixed; inset: 0;
+  display: flex;              /* 가운데 정렬 유지 */
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  clip-path: circle(0 at 95% 5%);
+  -webkit-clip-path: circle(0 at 95% 5%);
+  background: rgba(0,0,0,0.96);
+  z-index: 1000;
+}
+.menu-overlay.active{
+  pointer-events: auto;
+  animation: overlay-reveal 0.6s ease-out forwards;
+}
+.menu-overlay.closing{
+  animation: overlay-hide 0.45s ease-in forwards;
+}
+
+/* 세로 메뉴 */
+.overlay-nav{
+  display: grid;
+  gap: clamp(18px, 4.5vw, 32px); /* “세로로 각각 띄워진” 간격 */
+  text-align: center;
+}
+.overlay-nav a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: clamp(24px, 6vw, 44px);
+}
+.overlay-nav a:hover{ color:#a36ef7; }
+
+/* 몸체 스크롤 잠금 */
+body.no-scroll{ overflow: hidden; }
+
+/* 열릴 때: 원만 커짐 */
+@keyframes overlay-reveal{
+  0%   { clip-path: circle(0 at 95% 5%); -webkit-clip-path: circle(0 at 95% 5%); }
+  100% { clip-path: circle(150vmax at 95% 5%); -webkit-clip-path: circle(150vmax at 95% 5%); }
+}
+
+/* 닫힐 때: 원만 줄어듦 */
+@keyframes overlay-hide{
+  0%   { clip-path: circle(150vmax at 95% 5%); -webkit-clip-path: circle(150vmax at 95% 5%); }
+  100% { clip-path: circle(0 at 95% 5%); -webkit-clip-path: circle(0 at 95% 5%); }
 }
