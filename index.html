@@ -110,83 +110,52 @@
 
   <!-- (선택) 모바일 주소창 대응 유틸 -->
   <script>
-    function setVh(){ const vh = window.innerHeight * 0.01; document.documentElement.style.setProperty('--vh', vh + 'px'); }
-    setVh(); window.addEventListener('resize', setVh); window.addEventListener('orientationchange', setVh);
-  </script>
-
-  <script>
-    const menuBtn = document.querySelector('.menu-btn');
-    const overlay = document.getElementById('menuOverlay');
-
-    function openMenu() {
-      overlay.classList.add('active');
-      overlay.removeAttribute('hidden');
-      menuBtn.setAttribute('aria-expanded', 'true');
-      document.body.classList.add('no-scroll');
-    }
-    function closeMenu() {
-      overlay.classList.remove('active');
-      overlay.setAttribute('hidden', '');
-      menuBtn.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('no-scroll');
-    }
-    menuBtn.addEventListener('click', () => {
-      overlay.classList.contains('active') ? closeMenu() : openMenu();
-    });
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay || e.target.hasAttribute('data-close')) closeMenu();
-    });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-  </script>
- <script>
-  // Skills 섹션 원형 리빌
+  // ========== Skills 섹션: 원형 리빌 ==========
   const skillsSection = document.querySelector('.skills');
-  if (skillsSection){
-    const onAnimEnd = () => {
-      // 애니 끝나면 성능 플래그 정리
-      skillsSection.classList.remove('animating');
-      skillsSection.removeEventListener('animationend', onAnimEnd);
-    };
 
-    const io = new IntersectionObserver((entries)=>{
+  if (skillsSection){
+    // 스크롤 전엔 완전히 숨김(clip-path: circle(0))
+    skillsSection.classList.add('mask');
+
+    // 화면에 충분히 들어오면 천천히 퍼지며 등장
+    const ioReveal = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if (e.isIntersecting){
-          // 딱 이때만 레이어 힌트 켜기
-          skillsSection.classList.add('mask','revealed','animating');
-          skillsSection.addEventListener('animationend', onAnimEnd, {once:true});
-          io.unobserve(skillsSection);
+          setTimeout(()=> skillsSection.classList.add('revealed'), 80); // 약간 딜레이로 더 여유롭게
+          ioReveal.unobserve(skillsSection);
         }
       });
-    }, {threshold: 0.1}); // 너무 늦지 않도록 낮게
-    io.observe(skillsSection);
+    },{
+      root: null,
+      threshold: 0,
+      rootMargin: "0px 0px -22% 0px" // 뷰포트 하단 22%까지만 들어와도 트리거
+    });
+    ioReveal.observe(skillsSection);
   }
 
-  // 중앙 항목만 흰색 (그대로)
-  const skillItems = [...document.querySelectorAll('.skills .skills-list li')];
-  if (skillItems.length){
-    let ticking = false;
-    const highlightCenter = () => {
-      ticking = false;
-      const mid = window.innerHeight / 2;
+  // ========== 중앙선과 교차하는 항목만 active ==========
+  const skillItems = skillsSection ? skillsSection.querySelectorAll('.skills .skills-list li') : [];
 
-      const rectS = skillsSection.getBoundingClientRect();
-      const onScreen = rectS.bottom > 0 && rectS.top < window.innerHeight;
-      if (!onScreen){ skillItems.forEach(li=>li.classList.remove('active')); return; }
+  if (skillsSection && skillItems.length) {
+    let currentActive = null;
 
-      let bestIdx = 0, bestD = Infinity;
-      for (let i=0; i<skillItems.length; i++){
-        const r = skillItems[i].getBoundingClientRect();
-        const d = Math.abs((r.top + r.height/2) - mid);
-        if (d < bestD){ bestD = d; bestIdx = i; }
-      }
-      skillItems.forEach((li, i)=>li.classList.toggle('active', i === bestIdx));
-    };
-    const onScroll = () => {
-      if (!ticking){ requestAnimationFrame(highlightCenter); ticking = true; }
-    };
-    window.addEventListener('scroll', onScroll, {passive:true});
-    window.addEventListener('resize', onScroll);
-    onScroll();
+    const ioCenter = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (currentActive && currentActive !== entry.target) {
+            currentActive.classList.remove('active');
+          }
+          entry.target.classList.add('active');
+          currentActive = entry.target;
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0,                    // 선만 스쳐도 발동
+      rootMargin: "-50% 0px -50% 0px"  // 화면 '정중앙' 라인과 교차할 때만
+    });
+
+    skillItems.forEach(li => ioCenter.observe(li));
   }
 </script>
 </body>
