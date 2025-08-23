@@ -624,33 +624,37 @@ body.no-scroll{ overflow: hidden; }
 }
 
 /* ===== Skills: circle reveal + active item ===== */
-
-/* 기본은 보이게(clip-path 없음) */
-.skills{ /* 기존 배경/타이포는 그대로 */ }
-
-/* JS가 붙은 뒤에만 마스킹 시작 */
-.skills.mask {
-  clip-path: circle(0 at 50% 100%);
-  -webkit-clip-path: circle(0 at 50% 100%);
+.skills{
+  min-height: 140svh;                    /* 더 길게 보여주기 */
+  padding-block: clamp(14vh, 22vh, 28vh);/* 위/아래 런웨이 늘리기 */
+  position: relative;
+  overflow: clip;                         /* 마스크 애니메이션 클립 */
 }
 
-/* 퍼지듯이 열림 */
+/* 처음엔 완전히 숨김(원 반지름 0) — 스크롤로 들어오기 전까진 안 보임 */
+.skills.mask{
+  --reveal-origin: 50% 100%;              /* 화면 하단 중앙에서 퍼지도록 */
+  -webkit-clip-path: circle(0 at var(--reveal-origin));
+  clip-path: circle(0 at var(--reveal-origin));
+}
+
 .skills.mask.revealed{
-  animation: skills-reveal 0.9s ease-out forwards;
+  animation: skills-reveal 1.15s cubic-bezier(.2,.65,.16,1) forwards;
 }
+
 @keyframes skills-reveal{
   to{
-    clip-path: circle(150vmax at 50% 100%);
-    -webkit-clip-path: circle(150vmax at 50% 100%);
+    -webkit-clip-path: circle(150vmax at var(--reveal-origin));
+    clip-path: circle(150vmax at var(--reveal-origin));
   }
 }
 
-/* 글자 밝기 */
 .skills-list{ list-style: none; }
-.skills-list li{
+.skills-list li {
   color: rgba(255,255,255,.45);
   transition: color .25s ease, transform .25s ease;
 }
+
 .skills-list li.active{
   color: #fff;
   transform: scale(1.02);
