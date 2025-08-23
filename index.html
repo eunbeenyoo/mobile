@@ -10,10 +10,22 @@
   <!-- Header -->
   <header class="header">
     <button class="contact-btn">Contact me</button>
-    <div class="menu-icon">☰</div>
+
+    <!-- 메뉴 버튼 (햄버거) -->
+    <button class="menu-btn" aria-expanded="false" aria-controls="menuOverlay" aria-label="Open menu" type="button">
+      <span class="menu-icon" aria-hidden="true">☰</span>
+    </button>
   </header>
 
-  <!-- 메인 스크롤 영역 래핑 -->
+  <!-- Overlay Menu -->
+  <div id="menuOverlay" class="menu-overlay" hidden>
+    <nav class="overlay-nav" role="dialog" aria-modal="true">
+      <a href="#about" data-close>About</a>
+      <a href="#portfolio" data-close>Portfolio</a>
+      <a href="#contact" data-close>Contact</a>
+    </nav>
+  </div>
+
   <main class="page">
     <!-- Hero -->
     <section class="hero">
@@ -23,36 +35,24 @@
     </section>
 
     <!-- Works -->
-    <section class="works">
+    <section class="works" id="portfolio">
       <h2>Selected Works</h2>
-
-      <!-- Wandering Jangseung -->
       <div class="work-card">
         <a href="works/jangseung.html" class="work-card-link" aria-label="Open Wandering Jangseung details">
           <img src="images/wandering_jangseung.png" alt="Wandering Jangseung">
-          <div class="work-info">
-            <div class="title">Wandering Jangseung</div>
-          </div>
+          <div class="work-info"><div class="title">Wandering Jangseung</div></div>
         </a>
       </div>
-
-      <!-- Earth Piece -->
       <div class="work-card">
         <a href="works/earth-piece.html" class="work-card-link" aria-label="Open Earth Piece details">
           <img src="images/earth_piece.jpeg" alt="Earth Piece">
-          <div class="work-info">
-            <div class="title">Earth Piece</div>
-          </div>
+          <div class="work-info"><div class="title">Earth Piece</div></div>
         </a>
       </div>
-
-      <!-- Out of an egg -->
       <div class="work-card">
         <a href="works/out-of-an-egg.html" class="work-card-link" aria-label="Open Out of an egg details">
           <img src="images/out_of_an_egg.png" alt="Out of an egg">
-          <div class="work-info">
-            <div class="title">Out of an egg</div>
-          </div>
+          <div class="work-info"><div class="title">Out of an egg</div></div>
         </a>
       </div>
     </section>
@@ -69,12 +69,15 @@
     </section>
 
     <!-- About -->
-    <section class="about about--long">
+    <section class="about about--long" id="about">
       <h2>More about me</h2>
       <p>I'm a passionate Graphic Designer & Digital Media Student based in Korea who loves turning ideas into inspiring visuals</p>
       <div class="about-spot" aria-hidden="true"></div>
       <p class="about-caption">Jul 2024 - present · Digital Media Student at RMIT University, Vietnam</p>
     </section>
+
+    <!-- Contact 앵커만 써도 됨 -->
+    <div id="contact"></div>
   </main>
 
   <!-- Footer -->
@@ -82,15 +85,36 @@
     <p>© 2025 Eunbeen</p>
   </footer>
 
+  <!-- (선택) 모바일 주소창 대응 유틸 -->
   <script>
-    // 실제 내부 높이로 --vh 세팅 (모바일 주소창 변동 대응)
-    function setVh() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', vh + 'px');
+    function setVh(){ const vh = window.innerHeight * 0.01; document.documentElement.style.setProperty('--vh', vh + 'px'); }
+    setVh(); window.addEventListener('resize', setVh); window.addEventListener('orientationchange', setVh);
+  </script>
+
+  <!-- 메뉴 토글 스크립트 -->
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const overlay = document.getElementById('menuOverlay');
+
+    function openMenu() {
+      overlay.classList.add('active');
+      overlay.removeAttribute('hidden');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('no-scroll');
     }
-    setVh();
-    window.addEventListener('resize', setVh);
-    window.addEventListener('orientationchange', setVh);
+    function closeMenu() {
+      overlay.classList.remove('active');
+      overlay.setAttribute('hidden', '');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('no-scroll');
+    }
+    menuBtn.addEventListener('click', () => {
+      overlay.classList.contains('active') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay || e.target.hasAttribute('data-close')) closeMenu();
+    });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   </script>
 </body>
 </html>
