@@ -138,41 +138,52 @@
     });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
   </script>
-  <script>
+ <script>
   // Skills 섹션 원형 리빌
   const skillsSection = document.querySelector('.skills');
   if (skillsSection){
+    const onAnimEnd = () => {
+      // 애니 끝나면 성능 플래그 정리
+      skillsSection.classList.remove('animating');
+      skillsSection.removeEventListener('animationend', onAnimEnd);
+    };
+
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{
         if (e.isIntersecting){
-          // 들어온 "그 순간"에만 마스킹 + 리빌을 동시에 적용
-          skillsSection.classList.add('mask','revealed');
+          // 딱 이때만 레이어 힌트 켜기
+          skillsSection.classList.add('mask','revealed','animating');
+          skillsSection.addEventListener('animationend', onAnimEnd, {once:true});
           io.unobserve(skillsSection);
         }
       });
-    }, {threshold: 0.15});
+    }, {threshold: 0.1}); // 너무 늦지 않도록 낮게
     io.observe(skillsSection);
   }
 
-  // 중앙 항목만 흰색 유지 (그대로)
+  // 중앙 항목만 흰색 (그대로)
   const skillItems = [...document.querySelectorAll('.skills .skills-list li')];
   if (skillItems.length){
     let ticking = false;
     const highlightCenter = () => {
       ticking = false;
       const mid = window.innerHeight / 2;
+
       const rectS = skillsSection.getBoundingClientRect();
       const onScreen = rectS.bottom > 0 && rectS.top < window.innerHeight;
       if (!onScreen){ skillItems.forEach(li=>li.classList.remove('active')); return; }
+
       let bestIdx = 0, bestD = Infinity;
-      skillItems.forEach((li, i)=>{
-        const r = li.getBoundingClientRect();
+      for (let i=0; i<skillItems.length; i++){
+        const r = skillItems[i].getBoundingClientRect();
         const d = Math.abs((r.top + r.height/2) - mid);
         if (d < bestD){ bestD = d; bestIdx = i; }
-      });
+      }
       skillItems.forEach((li, i)=>li.classList.toggle('active', i === bestIdx));
     };
-    const onScroll = () => { if (!ticking){ requestAnimationFrame(highlightCenter); ticking = true; } };
+    const onScroll = () => {
+      if (!ticking){ requestAnimationFrame(highlightCenter); ticking = true; }
+    };
     window.addEventListener('scroll', onScroll, {passive:true});
     window.addEventListener('resize', onScroll);
     onScroll();
