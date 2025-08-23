@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Earth Piece</title>
+  <link rel="stylesheet" href="../style.css"/>
+</head>
+
+<body class="detail-page">
+  <!-- Header (홈과 동일) -->
+  <header class="header">
+    <button class="contact-btn">Contact me</button>
+    <div class="menu-icon">☰</div>
+  </header>
+
+  <main class="detail">
+    <!-- Title -->
+    <section class="detail-hero">
+      <h1 class="detail-title">Earth Piece</h1>
+    </section>
+
+    <!-- Main image (여백: .detail-media 패딩으로 처리) -->
+    <section class="detail-media" aria-labelledby="detail-title">
+      <figure class="detail-figure">
+        <img src="../images/earth_piece.jpeg" alt="Earth Piece main image">
+      </figure>
+    </section>
+
+    <!-- Meta (타입/연도/프로젝트 유형) -->
+    <section class="detail-meta" aria-label="Project meta">
+      <ul class="meta-list">
+        <li><span>2D Motion graphics</span></li>
+        <li><span>2025</span></li>
+        <li><span>Personal Project</span></li>
+      </ul>
+    </section>
+
+    <!-- Description -->
+    <section class="detail-body" aria-labelledby="desc-heading">
+      <h2 id="desc-heading">Description</h2>
+      <p>
+        This animation is inspired by <em>Earth Piece: “Listen to the Sound of the Earth Turning”</em>,
+        an instruction piece by Yoko Ono. Though we cannot hear the Earth turning, its silent rotation
+        marks the passage of time—through day and night, years and centuries.
+      </p>
+      <p>
+        Through five scenes—flower fields, forests, oceans, night skies, and deserts—I visualize
+        how life thrives in some places yet fades in others. The final scene shows fragile grass
+        pushing through desert sand, not as a hopeful start, but as a fragile continuation shaped
+        by time's quiet, constant movement.
+      </p>
+    </section>
+
+    <!-- Horizontal strip: Sketch 1–5 -->
+    <section class="detail-strip" aria-label="Sketch previews">
+      <div class="strip-head">
+        <h3 class="strip-title">Sketches 1–5</h3>
+        <span class="strip-hint" aria-hidden="true">Swipe →</span>
+      </div>
+
+      <div class="h-scroll" aria-label="Horizontal scroll gallery">
+        <figure class="detail-thumb"><img src="../images/sketch1.png" alt="Sketch 1"></figure>
+        <figure class="detail-thumb"><img src="../images/sketch2.png" alt="Sketch 2"></figure>
+        <figure class="detail-thumb"><img src="../images/sketch3.png" alt="Sketch 3"></figure>
+        <figure class="detail-thumb"><img src="../images/sketch4.png" alt="Sketch 4"></figure>
+        <figure class="detail-thumb"><img src="../images/sketch5.png" alt="Sketch 5"></figure>
+      </div>
+    </section>
+
+    <!-- 추가 스틸 이미지 묶음 (여백: .detail-media 패딩으로 처리) -->
+    <section class="detail-media" aria-label="Stills gallery">
+      <figure class="detail-figure"><img src="../images/earth_piece.jpeg" alt="Main still"></figure>
+      <figure class="detail-figure"><img src="../images/scene2.jpeg" alt="Scene 2"></figure>
+      <figure class="detail-figure"><img src="../images/scene3.jpeg" alt="Scene 3"></figure>
+      <figure class="detail-figure"><img src="../images/scene4.jpeg" alt="Scene 4"></figure>
+      <figure class="detail-figure"><img src="../images/scene5.jpeg" alt="Scene 5"></figure>
+    </section>
+
+    <!-- More projects -->
+    <section class="works">
+      <h2>More projects</h2>
+
+      <div class="work-card">
+        <a href="jangseung.html">
+          <img src="../images/wandering_jangseung.png" alt="Wandering Jangseung">
+          <div class="work-info">
+            <div class="title">Wandering Jangseung</div>
+          </div>
+        </a>
+      </div>
+
+      <div class="work-card">
+        <a href="out-of-an-egg.html">
+          <img src="../images/out_of_an_egg.png" alt="Out of an egg">
+          <div class="work-info">
+            <div class="title">Out of an egg</div>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Eunbeen</p>
+  </footer>
+</body>
+</html>
