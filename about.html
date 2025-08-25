@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><b>About - Eunbeen</b></title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .about-page .header{ padding:0; height:0; background:transparent; border:0; }
+
+    .contact-right{ position:relative; overflow:hidden; background:#000; display:grid; place-items:center; padding:16px; }
+    .cloud{ position:absolute; top:0; left:-150px; width:120px; height:auto; pointer-events:none; animation:cloudMove linear forwards; }
+    @keyframes cloudMove{ from{transform:translateX(0)} to{transform:translateX(120vw)} }
+    .squid{ position:absolute; top:0; left:-180px; width:120px; height:auto; pointer-events:none; animation:squidFly linear forwards; }
+    @keyframes squidFly{ from{transform:translateX(0) translateY(0) rotate(0deg)} to{transform:translateX(120vw) translateY(-40px) rotate(10deg)} }
+  </style>
+</head>
+
+<body class="about-page">
+  <!-- 메뉴바 -->
+  <header class="header">
+    <button class="menu-btn" aria-expanded="false" aria-controls="menuOverlay" aria-label="Open menu" type="button">
+      <span class="menu-icon" aria-hidden="true">☰</span>
+    </button>
+  </header>
+
+  <div id="menuOverlay" class="menu-overlay" hidden>
+    <nav class="overlay-nav" role="dialog" aria-modal="true">
+      <a href="index.html#home" data-close>Home</a>
+      <a href="index.html#portfolio" data-close>Portfolio</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+
+  <main>
+    <section class="contact-wrap" id="<b>about</b>"> <!-- id도 about으로 -->
+      <!-- LEFT: 소개 텍스트 -->
+      <div class="contact-left">
+        <h1 class="contact-title"><b>About</b></h1>
+        <p class="contact-lead">
+          I'm Eunbeen — a Digital Media student focusing on Web Design, Motion Graphics, and 2D/3D Design.
+Currently studying at RMIT Vietnam, with a growing practice in both 2D and 3D design.
+        </p>
+        <!-- 프로필 블록 -->
+<div class="profile-block">
+  <div class="about-spot">
+    <img class="about-squid" src="images/squid.svg" alt="Eunbeen pixel squid">
+  </div>
+  <p class="profile-name">Eunbeen Yoo</p>
+  <p class="profile-role">Digital Media Student · RMIT Vietnam</p>
+</div>
+
+<!-- 미니 연락 폼 (메일 클라이언트 열림 방식) -->
+<form class="mini-contact contact-form" 
+      action="mailto:hello@eunbeen.me" method="post" enctype="text/plain">
+  <div class="contact-field">
+    <label class="contact-label" for="mc-email">Your email</label>
+    <input class="contact-input" id="mc-email" name="email" type="email" required placeholder="you@example.com">
+  </div>
+
+  <div class="contact-field">
+    <label class="contact-label" for="mc-msg">Message</label>
+    <textarea class="contact-textarea" id="mc-msg" name="message" rows="3" required placeholder="Say hi :)"></textarea>
+  </div>
+
+  <button class="contact-btn-submit" type="submit">Send</button>
+</form>
+
+
+        <!-- 필요하다면 소개 리스트(간단 카드) -->
+        <ul style="margin:18px 0 0; padding-left:18px; color:#384152;">
+          <li><b>Tools</b>: Photoshop, Illustrator, After Effects, Blender, Figma</li>
+        </ul>
+      </div>
+
+      <!-- RIGHT: 검정 패널 + 일러스트(그대로 사용) -->
+      <aside class="contact-right" aria-label="Illustration">
+        <img class="contact-ill" src="images/contact-illustration.png" alt="">
+      </aside>
+    </section>
+  </main>
+
+
+  <script>
+    /* =========================
+     MENU TOGGLE
+  ========================= */
+(() => {
+  const menuBtn  = document.querySelector('.menu-btn');
+  const overlay  = document.getElementById('menuOverlay');
+  const bodyEl   = document.body;
+
+  if (menuBtn && overlay) {
+    function openMenu(){
+      overlay.removeAttribute('hidden');
+      overlay.getBoundingClientRect();
+      overlay.classList.remove('closing');
+      overlay.classList.add('active');
+      menuBtn.setAttribute('aria-expanded','true');
+      bodyEl.classList.add('no-scroll');
+    }
+    function closeMenu(){
+      overlay.classList.remove('active');
+      overlay.classList.add('closing');
+      menuBtn.setAttribute('aria-expanded','false');
+      bodyEl.classList.remove('no-scroll');
+    }
+    overlay.addEventListener('animationend', () => {
+      if (overlay.classList.contains('closing')){
+        overlay.setAttribute('hidden','');
+        overlay.classList.remove('closing');
+      }
+    });
+    menuBtn.addEventListener('click', () => {
+      overlay.classList.contains('active') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay || e.target.hasAttribute('data-close')) closeMenu();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+
+  /* =========================
+     ABOUT 오른쪽 패널 효과
+     (.contact-right 내부에서만)
+  ========================= */
+  const stage = document.querySelector('.contact-right');
+  if (!stage) return;
+
+  // ---------- CLOUD ----------
+  function spawnCloud() {
+    const cloud = document.createElement('img');
+    cloud.src = "images/cloud.svg";
+    cloud.className = "cloud";
+
+    // 랜덤 크기/위치/속도
+    const size = 60 + Math.random() * 120;       // 60~180px
+    cloud.style.width = size + "px";
+
+    const pad = 10;
+    const maxTop = Math.max(pad, stage.clientHeight - size - pad);
+    const randomTop = pad + Math.random() * (maxTop - pad);
+    cloud.style.top = randomTop + "px";
+
+    const duration = 20 + Math.random() * 25;    // 20~45s
+    cloud.style.animationDuration = duration + "s";
+
+    stage.appendChild(cloud);
+    cloud.addEventListener("animationend", () => cloud.remove());
+  }
+  // 처음 1개 + 주기적 생성
+  spawnCloud();
+  setInterval(spawnCloud, 5000);
+
+  // ---------- SQUID: 1마리, 벽 튕김 + 회전 ----------
+  let squidRAF = null;
+  let squidNode = null;
+
+  function launchBouncySquid() {
+    if (squidNode) return; // 이미 있으면 생성X
+
+    // 파라미터
+    const SIZE_MIN = 100, SIZE_MAX = 160;                 // px
+    const SPEED_MIN = 90, SPEED_MAX = 160;                // px/s
+    const SPIN_ON_BOUNCE_MIN = 540, SPIN_ON_BOUNCE_MAX = 1440; // deg/s
+    const SPIN_DECAY = 0.96;                              // 회전 감쇠
+    const WOBBLE_DEG = 5;                                 // 멍청미 흔들림
+
+    // 엘리먼트
+    const img = document.createElement('img');
+    img.src = 'images/squid.svg';
+    img.className = 'squid';
+    img.style.position = 'absolute';
+    img.style.pointerEvents = 'none';
+    img.style.userSelect = 'none';
+    img.style.willChange = 'transform, top, left';
+    stage.appendChild(img);
+    squidNode = img;
+
+    // 크기
+    const size = SIZE_MIN + Math.random() * (SIZE_MAX - SIZE_MIN);
+    img.style.width = size + 'px';
+
+    // 경계
+    const pad = 16;
+    const rect = stage.getBoundingClientRect();
+    const bounds = {
+      minX: pad,
+      minY: pad,
+      maxX: rect.width - size - pad,
+      maxY: rect.height - size - pad
+    };
+
+    // 초기 위치
+    let x = bounds.minX + Math.random() * (bounds.maxX - bounds.minX);
+    let y = bounds.minY + Math.random() * (bounds.maxY - bounds.minY);
+
+    // 방향/속도
+    function randDir() {
+      const ax = Math.random() * 2 - 1;
+      const ay = Math.random() * 2 - 1;
+      const len = Math.max(0.0001, Math.hypot(ax, ay));
+      return { x: ax / len, y: ay / len };
+    }
+    let dir = randDir();
+    let speed = SPEED_MIN + Math.random() * (SPEED_MAX - SPEED_MIN);
+
+    // 회전 관련
+    let angle = 0;      // deg
+    let spinVel = 0;    // deg/s
+    let wobblePhase = Math.random() * Math.PI * 2;
+
+    // 타임
+    let lastTs = performance.now();
+
+    function tick(ts) {
+      const dt = Math.min(0.032, (ts - lastTs) / 1000); // 초
+      lastTs = ts;
+
+      // 이동
+      x += dir.x * speed * dt;
+      y += dir.y * speed * dt;
+
+      // 벽 충돌 체크
+      let bounced = false;
+      if (x <= bounds.minX) { x = bounds.minX; dir.x *= -1; bounced = true; }
+      if (x >= bounds.maxX) { x = bounds.maxX; dir.x *= -1; bounced = true; }
+      if (y <= bounds.minY) { y = bounds.minY; dir.y *= -1; bounced = true; }
+      if (y >= bounds.maxY) { y = bounds.maxY; dir.y *= -1; bounced = true; }
+
+      // 멍때리는 흔들림
+      wobblePhase += dt * 2;
+      const wobble = Math.sin(wobblePhase) * WOBBLE_DEG;
+
+      // 렌더
+      img.style.left = x + 'px';
+      img.style.top  = y + 'px';
+      img.style.transform = `rotate(${angle + wobble}deg) translateZ(0)`;
+
+      squidRAF = requestAnimationFrame(tick);
+    }
+
+    squidRAF = requestAnimationFrame(tick);
+
+    // 리사이즈 시 경계 보정
+    window.addEventListener('resize', () => {
+      const r = stage.getBoundingClientRect();
+      bounds.maxX = r.width  - size - pad;
+      bounds.maxY = r.height - size - pad;
+      x = Math.min(Math.max(x, bounds.minX), bounds.maxX);
+      y = Math.min(Math.max(y, bounds.minY), bounds.maxY);
+    });
+
+    // 탭 전환 시 일시정지/재개
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState !== 'visible') {
+        if (squidRAF) cancelAnimationFrame(squidRAF);
+        squidRAF = null;
+      } else if (!squidRAF) {
+        lastTs = performance.now();
+        squidRAF = requestAnimationFrame(tick);
+      }
+    });
+  }
+
+  launchBouncySquid();
+})();
+</script>
+</body>
+</html>
