@@ -1,162 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Eunbeen Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <!-- Header -->
+  <!-- ================= HEADER ================= -->
   <header class="header">
-    <button class="contact-btn">Contact me</button>
-
-    <!-- 메뉴 버튼 (햄버거) -->
     <button class="menu-btn" aria-expanded="false" aria-controls="menuOverlay" aria-label="Open menu" type="button">
       <span class="menu-icon" aria-hidden="true">☰</span>
     </button>
   </header>
 
-  <!-- Overlay Menu -->
+  <!-- ================= MENU OVERLAY ================= -->
   <div id="menuOverlay" class="menu-overlay" hidden>
     <nav class="overlay-nav" role="dialog" aria-modal="true">
-      <a href="#about" data-close>About</a>
-      <a href="#portfolio" data-close>Portfolio</a>
-      <a href="#contact" data-close>Contact</a>
+      <a href="index.html#heroArea" data-close>Home</a>
+      <a href="index.html#portfolio" data-close>Portfolio</a>
+      <a href="about.html" data-close>About</a>
     </nav>
   </div>
 
+  <!-- ================= MAIN ================= -->
   <main class="page">
-    <!-- Hero -->
-    <section class="hero">
-      <h1 class="title">Hello!</h1>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="heroArea">
+      <h1 class="title" id="helloTitle">Hello!</h1>
       <p class="subtitle">I'm Eunbeen</p>
-      <p class="scroll">↓ scroll to explore</p>
+      <div class="scroll-hint">
+        <span>↓ scroll to explore</span>
+        <img src="images/squid.svg" alt="squid pixel" class="scroll-icon" />
+      </div>
     </section>
 
-    <!--------- Works ----------->
-<section class="works" id="portfolio">
-  <h2>Selected Works</h2>
-  <p class="works-sub">
-    Take a look at some of my projects ✦ Each piece showcases my creative journey and
-    dedication to transforming ideas into visually compelling stories.
-  </p>
-  <!-- 기존 카드들 계속 -->
+    <!-- ===== WORKS ===== -->
+    <section class="works" id="portfolio">
+      <h2>Selected Works</h2>
+      <p class="works-sub">
+        Explore my projects! Each work reflects my process and passion for crafting clear, engaging visual experiences.
+      </p>
 
-  <!-- Wandering Jangseung -->
-  <div class="work-card">
-    <a href="works/jangseung.html" class="work-card-link" aria-label="Open Wandering Jangseung details">
-      <img src="images/wandering_jangseung.png" alt="Wandering Jangseung">
-      <div class="work-info"><div class="title">Wandering Jangseung</div></div>
-      <!-- details.svg 아이콘 -->
-      <span class="details-btn">
-        <img src="images/details.svg" alt="Details">
-      </span>
-    </a>
-  </div>
+      <!-- Work Card: Wandering Jangseung -->
+      <div class="work-card">
+        <a href="works/jangseung.html" class="work-card-link" aria-label="Open Wandering Jangseung details">
+          <img src="images/wandering_jangseung.png" alt="Wandering Jangseung" />
+          <div class="work-info"><div class="title">Wandering Jangseung</div></div>
+          <span class="details-btn"><img src="images/details.svg" alt="Details" /></span>
+        </a>
+      </div>
 
-  <!-- Earth Piece -->
-  <div class="work-card">
-    <a href="works/earth-piece.html" class="work-card-link" aria-label="Open Earth Piece details">
-      <img src="images/earth_piece.jpeg" alt="Earth Piece">
-      <div class="work-info"><div class="title">Earth Piece</div></div>
-      <!-- details.svg 아이콘 -->
-      <span class="details-btn">
-        <img src="images/details.svg" alt="Details">
-      </span>
-    </a>
-  </div>
+      <!-- Work Card: Earth Piece -->
+      <div class="work-card">
+        <a href="works/earth-piece.html" class="work-card-link" aria-label="Open Earth Piece details">
+          <img src="images/earth_piece.jpeg" alt="Earth Piece" />
+          <div class="work-info"><div class="title">Earth Piece</div></div>
+          <span class="details-btn"><img src="images/details.svg" alt="Details" /></span>
+        </a>
+      </div>
 
-  <!-- Out of an egg -->
-  <div class="work-card">
-    <a href="works/out-of-an-egg.html" class="work-card-link" aria-label="Open Out of an egg details">
-      <img src="images/out_of_an_egg.png" alt="Out of an egg">
-      <div class="work-info"><div class="title">Out of an egg</div></div>
-      <!-- details.svg 아이콘 -->
-      <span class="details-btn">
-        <img src="images/details.svg" alt="Details">
-      </span>
-    </a>
-  </div>
-</section>
+      <!-- Work Card: Out of an egg -->
+      <div class="work-card">
+        <a href="works/out-of-an-egg.html" class="work-card-link" aria-label="Open Out of an egg details">
+          <img src="images/out_of_an_egg.png" alt="Out of an egg" />
+          <div class="work-info"><div class="title">Out of an egg</div></div>
+          <span class="details-btn"><img src="images/details.svg" alt="Details" /></span>
+        </a>
+      </div>
+    </section>
 
-    <!-- Skills -->
+    <!-- ===== SKILLS ===== -->
     <section class="skills">
       <ul class="skills-list">
-        <li>UI/UX</li>
+        <li>Web Design</li>
         <li>Motion&nbsp; Graphics</li>
         <li>Illustration</li>
         <li>2D Design</li>
         <li>3D Design</li>
       </ul>
+      <div class="pixel-layer" aria-hidden="true"></div>
     </section>
 
-    <!-- About -->
+    <!-- ===== ABOUT ===== -->
     <section class="about about--long" id="about">
       <h2>More about me</h2>
-      <p>I'm a passionate Graphic Designer & Digital Media Student based in Korea who loves turning ideas into inspiring visuals</p>
-      <div class="about-spot" aria-hidden="true"></div>
-      <p class="about-caption">Jul 2024 - present · Digital Media Student at RMIT University, Vietnam</p>
+      <p>
+        Hello! I'm a Korean student currently studying Digital Media at RMIT Vietnam.
+I'm passionate about exploring visual storytelling and creating designs that balance clarity with creativity.
+As a student, I see every project as a chance to experiment, grow, and discover new ways to bring ideas to life.
+      </p>
+
+      <!-- 오징어: 클릭하면 about.html로 이동 -->
+      <div class="about-spot" aria-hidden="true">
+        <a href="about.html" class="about-link">
+          <img src="images/squid.svg" alt="About me squid" class="about-squid" />
+        </a>
+      </div>
+
+      <p class="about-caption">
+        Aug 2025 - present · Digital Media Student at RMIT University, Vietnam
+      </p>
     </section>
 
-    <!-- Contact 앵커만 써도 됨 -->
+    <!-- ===== CONTACT (anchor only) ===== -->
     <div id="contact"></div>
   </main>
 
-  <!-- Footer -->
+  <!-- ================= FOOTER ================= -->
   <footer>
     <p>© 2025 Eunbeen</p>
   </footer>
 
-  <!-- (선택) 모바일 주소창 대응 유틸 -->
+  <!-- ================= SCRIPTS ================= -->
+
+  <!-- Menu -->
   <script>
-  // ========== Skills 섹션: 원형 리빌 ==========
-  const skillsSection = document.querySelector('.skills');
+    const menuBtn  = document.querySelector('.menu-btn');
+    const overlay  = document.getElementById('menuOverlay');
+    const body     = document.body;
 
-  if (skillsSection){
-    // 스크롤 전엔 완전히 숨김(clip-path: circle(0))
-    skillsSection.classList.add('mask');
-
-    // 화면에 충분히 들어오면 천천히 퍼지며 등장
-    const ioReveal = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if (e.isIntersecting){
-          setTimeout(()=> skillsSection.classList.add('revealed'), 80); // 약간 딜레이로 더 여유롭게
-          ioReveal.unobserve(skillsSection);
-        }
-      });
-    },{
-      root: null,
-      threshold: 0,
-      rootMargin: "0px 0px -22% 0px" // 뷰포트 하단 22%까지만 들어와도 트리거
+    function openMenu(){
+      overlay.removeAttribute('hidden');
+      overlay.getBoundingClientRect();
+      overlay.classList.remove('closing');
+      overlay.classList.add('active');
+      menuBtn.setAttribute('aria-expanded','true');
+      body.classList.add('no-scroll');
+    }
+    function closeMenu(){
+      overlay.classList.remove('active');
+      overlay.classList.add('closing');
+      menuBtn.setAttribute('aria-expanded','false');
+      body.classList.remove('no-scroll');
+    }
+    overlay.addEventListener('animationend', (e)=>{
+      if (overlay.classList.contains('closing')){
+        overlay.setAttribute('hidden','');
+        overlay.classList.remove('closing');
+      }
     });
-    ioReveal.observe(skillsSection);
-  }
-
-  // ========== 중앙선과 교차하는 항목만 active ==========
-  const skillItems = skillsSection ? skillsSection.querySelectorAll('.skills .skills-list li') : [];
-
-  if (skillsSection && skillItems.length) {
-    let currentActive = null;
-
-    const ioCenter = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          if (currentActive && currentActive !== entry.target) {
-            currentActive.classList.remove('active');
-          }
-          entry.target.classList.add('active');
-          currentActive = entry.target;
-        }
-      });
-    }, {
-      root: null,
-      threshold: 0,                    // 선만 스쳐도 발동
-      rootMargin: "-50% 0px -50% 0px"  // 화면 '정중앙' 라인과 교차할 때만
+    menuBtn.addEventListener('click', ()=>{
+      overlay.classList.contains('active') ? closeMenu() : openMenu();
     });
+    overlay.addEventListener('click', (e)=>{
+      if (e.target === overlay || e.target.hasAttribute('data-close')) closeMenu();
+    });
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape') closeMenu();
+    });
+  </script>
 
-    skillItems.forEach(li => ioCenter.observe(li));
-  }
-</script>
+  <!-- Skills Highlight -->
+  <script>
+    (() => {
+      const skillsSection = document.querySelector('.skills');
+      const items = [...document.querySelectorAll('.skills .skills-list li')];
+      if (!skillsSection || !items.length) return;
+
+      function highlightCenter() {
+        const rect = skillsSection.getBoundingClientRect();
+        if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
+          items.forEach(li => li.classList.remove('active'));
+          return;
+        }
+        const mid = window.innerHeight / 2;
+        let bestIdx = 0;
+        let bestD = Infinity;
+        for (let i = 0; i < items.length; i++) {
+          const r = items[i].getBoundingClientRect();
+          const centerY = r.top + r.height / 2;
+          const d = Math.abs(centerY - mid);
+          if (d < bestD) { bestD = d; bestIdx = i; }
+        }
+        items.forEach((li, i) => li.classList.toggle('active', i === bestIdx));
+      }
+      window.addEventListener('scroll', () => requestAnimationFrame(highlightCenter), { passive: true });
+      window.addEventListener('resize', () => requestAnimationFrame(highlightCenter), { passive: true });
+      highlightCenter();
+    })();
+  </script>
+
+  <!-- Pixel Drop Effect -->
+  <script>
+    const hero = document.getElementById("heroArea");
+    let isTouching = false, dropInterval = null, currentX = 0, currentY = 0;
+
+    function getRandomOffset(range) {
+      return Math.floor(Math.random() * range * 2 - range);
+    }
+    function createPixel(x, y) {
+      const pixel = document.createElement("img");
+      pixel.src = "images/pixel_box.svg";
+      pixel.className = "falling-pixel";
+      pixel.style.left = `${x - 24}px`;
+      pixel.style.top = `${y - 24}px`;
+      pixel.style.setProperty('--x-offset', `${getRandomOffset(20)}px`);
+      pixel.style.setProperty('--y-offset', `${getRandomOffset(10)}px`);
+      document.body.appendChild(pixel);
+      pixel.addEventListener("animationend", () => pixel.remove());
+    }
+    function startDrop(e) {
+      isTouching = true;
+      const pos = e.type === "touchstart" ? e.touches[0] : e;
+      currentX = pos.clientX; currentY = pos.clientY;
+      dropInterval = setInterval(() => { if (isTouching) createPixel(currentX, currentY); }, 80);
+    }
+    function moveTouch(e) {
+      if (!isTouching) return;
+      const pos = e.type === "touchmove" ? e.touches[0] : e;
+      currentX = pos.clientX; currentY = pos.clientY;
+    }
+    function stopDrop() {
+      isTouching = false; clearInterval(dropInterval);
+    }
+    hero.addEventListener("mousedown", startDrop);
+    hero.addEventListener("mousemove", moveTouch);
+    hero.addEventListener("mouseup", stopDrop);
+    hero.addEventListener("mouseleave", stopDrop);
+    hero.addEventListener("touchstart", startDrop);
+    hero.addEventListener("touchmove", moveTouch);
+    hero.addEventListener("touchend", stopDrop);
+  </script>
+
+  <!-- Scroll Hint: "scroll to explore" → "click me" -->
+  <script>
+    const hintEl = document.querySelector('.scroll-hint span');
+    const aboutSection = document.getElementById('about');
+    if (hintEl && aboutSection) {
+      const io = new IntersectionObserver(([entry]) => {
+        hintEl.textContent = entry.isIntersecting ? 'click me' : '↓ scroll to explore';
+      }, { threshold: 0.25, rootMargin: '0px 0px -12% 0px' });
+      io.observe(aboutSection);
+    }
+  </script>
+
 </body>
 </html>
