@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 189">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #90b1e0;
+      }
+
+      .cls-2 {
+        fill: #96a1b2;
+      }
+
+      .cls-3 {
+        fill: #cddef9;
+      }
+
+      .cls-4 {
+        fill: #ffd7e4;
+      }
+
+      .cls-5 {
+        fill: #f3f7ff;
+      }
+
+      .cls-6 {
+        fill: #19212d;
+      }
+    </style>
+  </defs>
+  <rect class="cls-5" x="90" y="63" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="72" width="9" height="9"/>
+  <rect class="cls-3" x="90" y="81" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="54" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="63" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="72" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="81" width="9" height="9"/>
+  <rect class="cls-5" x="108" y="81" width="9" height="9"/>
+  <rect class="cls-3" x="90" y="90" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="90" width="9" height="9"/>
+  <rect class="cls-5" x="108" y="90" width="9" height="9"/>
+  <rect class="cls-5" x="117" y="90" width="9" height="9"/>
+  <rect class="cls-5" x="108" y="99" width="9" height="9"/>
+  <rect class="cls-5" x="117" y="99" width="9" height="9"/>
+  <rect class="cls-5" x="126" y="99" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="108" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="117" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="126" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="108" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="108" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="108" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="144" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="126" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="135" y="126" width="9" height="9"/>
+  <rect class="cls-3" x="45" y="45" width="9" height="9"/>
+  <rect class="cls-3" x="27" y="63" width="9" height="9"/>
+  <rect class="cls-3" x="36" y="54" width="9" height="9"/>
+  <rect class="cls-1" x="9" y="72" width="9" height="9"/>
+  <rect class="cls-5" x="144" y="135" width="9" height="9"/>
+  <rect class="cls-2" x="90" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="99" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="81" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="90" y="90" width="9" height="9"/>
+  <rect class="cls-2" x="81" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="72" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="63" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="72" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="81" y="99" width="9" height="9"/>
+  <rect class="cls-6" x="72" y="99" width="9" height="9"/>
+  <rect class="cls-6" x="63" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="54" y="81" width="9" height="9"/>
+  <rect class="cls-5" x="54" y="63" width="9" height="9"/>
+  <rect class="cls-5" x="54" y="72" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="54" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="63" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="72" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="63" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="72" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="54" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="45" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="63" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="72" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="54" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="45" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="54" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="45" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="45" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="36" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="36" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="36" width="9" height="9"/>
+  <rect class="cls-3" x="54" y="36" width="9" height="9"/>
+  <rect class="cls-3" x="63" y="27" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="27" width="9" height="9"/>
+  <rect class="cls-5" x="126" y="63" width="9" height="9" transform="translate(261 135) rotate(-180)"/>
+  <rect class="cls-5" x="126" y="72" width="9" height="9" transform="translate(261 153) rotate(-180)"/>
+  <rect class="cls-5" x="117" y="54" width="9" height="9" transform="translate(243 117) rotate(-180)"/>
+  <rect class="cls-5" x="117" y="63" width="9" height="9" transform="translate(243 135) rotate(-180)"/>
+  <rect class="cls-5" x="117" y="72" width="9" height="9" transform="translate(243 153) rotate(-180)"/>
+  <rect class="cls-3" x="162" y="45" width="9" height="9" transform="translate(333 99) rotate(-180)"/>
+  <rect class="cls-3" x="180" y="63" width="9" height="9" transform="translate(369 135) rotate(-180)"/>
+  <rect class="cls-3" x="171" y="54" width="9" height="9" transform="translate(351 117) rotate(-180)"/>
+  <rect class="cls-1" x="198" y="81" width="9" height="9" transform="translate(405 171) rotate(-180)"/>
+  <rect class="cls-5" x="162" y="63" width="9" height="9" transform="translate(333 135) rotate(-180)"/>
+  <rect class="cls-5" x="162" y="72" width="9" height="9" transform="translate(333 153) rotate(-180)"/>
+  <rect class="cls-5" x="153" y="54" width="9" height="9" transform="translate(315 117) rotate(-180)"/>
+  <rect class="cls-5" x="153" y="63" width="9" height="9" transform="translate(315 135) rotate(-180)"/>
+  <rect class="cls-5" x="153" y="72" width="9" height="9" transform="translate(315 153) rotate(-180)"/>
+  <rect class="cls-5" x="144" y="63" width="9" height="9" transform="translate(297 135) rotate(-180)"/>
+  <rect class="cls-5" x="144" y="72" width="9" height="9" transform="translate(297 153) rotate(-180)"/>
+  <rect class="cls-5" x="144" y="54" width="9" height="9" transform="translate(297 117) rotate(-180)"/>
+  <rect class="cls-5" x="144" y="45" width="9" height="9" transform="translate(297 99) rotate(-180)"/>
+  <rect class="cls-5" x="135" y="63" width="9" height="9" transform="translate(279 135) rotate(-180)"/>
+  <rect class="cls-5" x="135" y="72" width="9" height="9" transform="translate(279 153) rotate(-180)"/>
+  <rect class="cls-5" x="135" y="54" width="9" height="9" transform="translate(279 117) rotate(-180)"/>
+  <rect class="cls-5" x="135" y="45" width="9" height="9" transform="translate(279 99) rotate(-180)"/>
+  <rect class="cls-5" x="126" y="54" width="9" height="9" transform="translate(261 117) rotate(-180)"/>
+  <rect class="cls-5" x="126" y="45" width="9" height="9" transform="translate(261 99) rotate(-180)"/>
+  <rect class="cls-5" x="117" y="45" width="9" height="9" transform="translate(243 99) rotate(-180)"/>
+  <rect class="cls-5" x="135" y="36" width="9" height="9" transform="translate(279 81) rotate(-180)"/>
+  <rect class="cls-5" x="126" y="36" width="9" height="9" transform="translate(261 81) rotate(-180)"/>
+  <rect class="cls-5" x="117" y="36" width="9" height="9" transform="translate(243 81) rotate(-180)"/>
+  <rect class="cls-3" x="153" y="36" width="9" height="9" transform="translate(315 81) rotate(-180)"/>
+  <rect class="cls-3" x="144" y="27" width="9" height="9" transform="translate(297 63) rotate(-180)"/>
+  <rect class="cls-5" x="126" y="27" width="9" height="9" transform="translate(261 63) rotate(-180)"/>
+  <rect class="cls-5" x="108" y="54" width="9" height="9" transform="translate(225 117) rotate(-180)"/>
+  <rect class="cls-5" x="108" y="63" width="9" height="9" transform="translate(225 135) rotate(-180)"/>
+  <rect class="cls-5" x="108" y="72" width="9" height="9" transform="translate(225 153) rotate(-180)"/>
+  <rect class="cls-5" x="108" y="45" width="9" height="9" transform="translate(225 99) rotate(-180)"/>
+  <rect class="cls-5" x="108" y="36" width="9" height="9" transform="translate(225 81) rotate(-180)"/>
+  <rect class="cls-5" x="99" y="27" width="9" height="9"/>
+  <rect class="cls-5" x="117" y="27" width="9" height="9" transform="translate(243 63) rotate(-180)"/>
+  <rect class="cls-5" x="108" y="27" width="9" height="9" transform="translate(225 63) rotate(-180)"/>
+  <rect class="cls-5" x="81" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="135" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="135" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="144" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="144" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="99" width="9" height="9"/>
+  <rect class="cls-5" x="153" y="99" width="9" height="9"/>
+  <rect class="cls-5" x="153" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="18" width="9" height="9"/>
+  <rect class="cls-5" x="117" y="18" width="9" height="9" transform="translate(243 45) rotate(-180)"/>
+  <rect class="cls-5" x="108" y="18" width="9" height="9" transform="translate(225 45) rotate(-180)"/>
+  <rect class="cls-5" x="117" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="117" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="117" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="99" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="99" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="126" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="126" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="144" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="153" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="144" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="153" width="9" height="9"/>
+  <rect class="cls-5" x="54" y="162" width="9" height="9"/>
+  <rect class="cls-5" x="99" y="153" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="162" width="9" height="9"/>
+  <rect class="cls-5" x="117" y="144" width="9" height="9"/>
+  <rect class="cls-5" x="117" y="153" width="9" height="9"/>
+  <rect class="cls-5" x="126" y="162" width="9" height="9"/>
+  <rect class="cls-5" x="144" y="153" width="9" height="9"/>
+  <rect class="cls-5" x="135" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="153" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="144" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="153" y="162" width="9" height="9"/>
+  <rect class="cls-5" x="135" y="144" width="9" height="9"/>
+  <rect class="cls-6" x="45" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="54" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="63" y="99" width="9" height="9"/>
+  <rect class="cls-6" x="72" y="108" width="9" height="9"/>
+  <rect class="cls-6" x="63" y="108" width="9" height="9"/>
+  <rect class="cls-6" x="36" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="45" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="54" y="99" width="9" height="9"/>
+  <rect class="cls-2" x="171" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="207" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="162" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="171" y="90" width="9" height="9"/>
+  <rect class="cls-2" x="162" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="153" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="144" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="153" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="162" y="99" width="9" height="9"/>
+  <rect class="cls-6" x="153" y="99" width="9" height="9"/>
+  <rect class="cls-6" x="144" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="135" y="81" width="9" height="9"/>
+  <rect class="cls-5" x="144" y="99" width="9" height="9"/>
+  <rect class="cls-6" x="126" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="135" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="144" y="99" width="9" height="9"/>
+  <rect class="cls-6" x="153" y="108" width="9" height="9"/>
+  <rect class="cls-6" x="144" y="108" width="9" height="9"/>
+  <rect class="cls-6" x="117" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="126" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="135" y="99" width="9" height="9"/>
+  <rect class="cls-6" x="108" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="27" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="36" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="45" y="99" width="9" height="9"/>
+  <rect class="cls-6" x="54" y="108" width="9" height="9"/>
+  <rect class="cls-6" x="135" y="108" width="9" height="9"/>
+  <rect class="cls-6" x="117" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="126" y="99" width="9" height="9"/>
+  <rect class="cls-5" x="45" y="63" width="9" height="9"/>
+  <rect class="cls-5" x="45" y="72" width="9" height="9"/>
+  <rect class="cls-5" x="54" y="54" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="45" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="36" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="27" width="9" height="9"/>
+  <rect class="cls-5" x="90" y="18" width="9" height="9"/>
+  <rect class="cls-3" x="90" y="9" width="9" height="9"/>
+  <rect class="cls-3" x="99" y="9" width="9" height="9"/>
+  <rect class="cls-3" x="108" y="9" width="9" height="9"/>
+  <rect class="cls-3" x="117" y="9" width="9" height="9"/>
+  <rect class="cls-3" x="135" y="18" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="153" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="153" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="54" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="54" y="126" width="9" height="9"/>
+  <rect class="cls-3" x="54" y="135" width="9" height="9"/>
+  <rect class="cls-5" x="36" y="63" width="9" height="9"/>
+  <rect class="cls-5" x="36" y="72" width="9" height="9"/>
+  <rect class="cls-5" x="45" y="54" width="9" height="9"/>
+  <rect class="cls-5" x="54" y="45" width="9" height="9"/>
+  <rect class="cls-5" x="63" y="36" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="27" width="9" height="9"/>
+  <rect class="cls-4" x="45" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="45" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="45" y="126" width="9" height="9"/>
+  <rect class="cls-4" x="162" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="162" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="162" y="117" width="9" height="9"/>
+  <rect class="cls-5" x="36" y="99" width="9" height="9"/>
+  <rect class="cls-5" x="27" y="90" width="9" height="9"/>
+  <rect class="cls-4" x="36" y="108" width="9" height="9"/>
+  <rect class="cls-3" x="36" y="117" width="9" height="9"/>
+  <rect class="cls-3" x="36" y="126" width="9" height="9"/>
+  <rect class="cls-5" x="171" y="99" width="9" height="9"/>
+  <rect class="cls-3" x="171" y="117" width="9" height="9"/>
+  <rect class="cls-4" x="171" y="108" width="9" height="9"/>
+  <rect class="cls-5" x="180" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="9" y="63" width="9" height="9"/>
+  <rect class="cls-6" y="72" width="9" height="9"/>
+  <rect class="cls-6" x="27" y="54" width="9" height="9"/>
+  <rect class="cls-6" x="36" y="45" width="9" height="9"/>
+  <rect class="cls-6" x="45" y="36" width="9" height="9"/>
+  <rect class="cls-6" x="54" y="27" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="18" width="9" height="9"/>
+  <rect class="cls-5" x="72" y="18" width="9" height="9"/>
+  <rect class="cls-6" x="63" y="18" width="9" height="9"/>
+  <rect class="cls-6" x="81" width="9" height="9"/>
+  <rect class="cls-6" x="72" y="9" width="9" height="9"/>
+  <rect class="cls-3" x="81" y="9" width="9" height="9"/>
+  <rect class="cls-6" x="90" width="9" height="9"/>
+  <rect class="cls-6" x="99" width="9" height="9"/>
+  <rect class="cls-6" x="108" width="9" height="9"/>
+  <rect class="cls-6" x="117" width="9" height="9"/>
+  <rect class="cls-6" x="135" y="9" width="9" height="9"/>
+  <rect class="cls-6" x="144" y="18" width="9" height="9"/>
+  <rect class="cls-6" x="153" y="27" width="9" height="9"/>
+  <rect class="cls-6" x="162" y="36" width="9" height="9"/>
+  <rect class="cls-6" x="171" y="45" width="9" height="9"/>
+  <rect class="cls-6" x="180" y="54" width="9" height="9"/>
+  <rect class="cls-6" x="207" y="72" width="9" height="9"/>
+  <rect class="cls-6" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="18" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="18" y="99" width="9" height="9"/>
+  <rect class="cls-3" x="27" y="99" width="9" height="9"/>
+  <rect class="cls-3" x="27" y="108" width="9" height="9"/>
+  <rect class="cls-6" x="18" y="108" width="9" height="9"/>
+  <rect class="cls-6" x="27" y="117" width="9" height="9"/>
+  <rect class="cls-6" x="27" y="126" width="9" height="9"/>
+  <rect class="cls-6" x="36" y="135" width="9" height="9"/>
+  <rect class="cls-6" x="45" y="135" width="9" height="9"/>
+  <rect class="cls-6" x="63" y="144" width="9" height="9"/>
+  <rect class="cls-6" x="54" y="144" width="9" height="9"/>
+  <rect class="cls-6" x="18" y="63" width="9" height="9"/>
+  <rect class="cls-1" x="9" y="81" width="9" height="9"/>
+  <rect class="cls-5" x="18" y="72" width="9" height="9"/>
+  <rect class="cls-5" x="27" y="72" width="9" height="9"/>
+  <rect class="cls-1" x="198" y="72" width="9" height="9" transform="translate(405 153) rotate(-180)"/>
+  <rect class="cls-5" x="171" y="72" width="9" height="9" transform="translate(351 153) rotate(-180)"/>
+  <rect class="cls-6" x="189" y="63" width="9" height="9"/>
+  <rect class="cls-5" x="180" y="72" width="9" height="9" transform="translate(369 153) rotate(-180)"/>
+  <rect class="cls-6" x="198" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="180" y="81" width="9" height="9" transform="translate(369 171) rotate(-180)"/>
+  <rect class="cls-5" x="18" y="81" width="9" height="9"/>
+  <rect class="cls-6" x="9" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="189" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="189" y="99" width="9" height="9"/>
+  <rect class="cls-6" x="198" y="63" width="9" height="9"/>
+  <rect class="cls-5" x="153" y="45" width="9" height="9" transform="translate(315 99) rotate(-180)"/>
+  <rect class="cls-5" x="171" y="63" width="9" height="9" transform="translate(351 135) rotate(-180)"/>
+  <rect class="cls-5" x="162" y="54" width="9" height="9" transform="translate(333 117) rotate(-180)"/>
+  <rect class="cls-5" x="144" y="36" width="9" height="9" transform="translate(297 81) rotate(-180)"/>
+  <rect class="cls-5" x="135" y="27" width="9" height="9" transform="translate(279 63) rotate(-180)"/>
+  <rect class="cls-5" x="126" y="18" width="9" height="9"/>
+  <rect class="cls-3" x="126" y="9" width="9" height="9"/>
+  <rect class="cls-6" x="126" width="9" height="9"/>
+  <rect class="cls-5" x="189" y="81" width="9" height="9" transform="translate(387 171) rotate(-180)"/>
+  <rect class="cls-5" x="189" y="72" width="9" height="9" transform="translate(387 153) rotate(-180)"/>
+  <rect class="cls-5" x="180" y="99" width="9" height="9"/>
+  <rect class="cls-3" x="180" y="108" width="9" height="9"/>
+  <rect class="cls-6" x="144" y="144" width="9" height="9"/>
+  <rect class="cls-6" x="153" y="144" width="9" height="9"/>
+  <rect class="cls-6" x="171" y="135" width="9" height="9"/>
+  <rect class="cls-6" x="162" y="135" width="9" height="9"/>
+  <rect class="cls-6" x="180" y="126" width="9" height="9"/>
+  <rect class="cls-6" x="180" y="117" width="9" height="9"/>
+  <rect class="cls-3" x="171" y="126" width="9" height="9"/>
+  <rect class="cls-6" x="189" y="108" width="9" height="9"/>
+  <rect class="cls-6" x="18" y="54" width="9" height="9"/>
+  <rect class="cls-6" x="189" y="54" width="9" height="9"/>
+  <rect class="cls-6" x="180" y="45" width="9" height="9"/>
+  <rect class="cls-6" x="171" y="36" width="9" height="9"/>
+  <rect class="cls-6" x="162" y="27" width="9" height="9"/>
+  <rect class="cls-6" x="153" y="18" width="9" height="9"/>
+  <rect class="cls-6" x="144" y="9" width="9" height="9"/>
+  <rect class="cls-6" x="135" width="9" height="9"/>
+  <rect class="cls-6" x="72" width="9" height="9"/>
+  <rect class="cls-6" x="63" y="9" width="9" height="9"/>
+  <rect class="cls-6" x="54" y="18" width="9" height="9"/>
+  <rect class="cls-6" x="45" y="27" width="9" height="9"/>
+  <rect class="cls-6" x="36" y="36" width="9" height="9"/>
+  <rect class="cls-6" x="27" y="45" width="9" height="9"/>
+  <rect class="cls-6" y="63" width="9" height="9"/>
+  <rect class="cls-6" y="90" width="9" height="9"/>
+  <rect class="cls-6" x="189" y="117" width="9" height="9"/>
+  <rect class="cls-6" x="180" y="135" width="9" height="9"/>
+  <rect class="cls-6" x="162" y="144" width="9" height="9"/>
+  <rect class="cls-6" x="45" y="144" width="9" height="9"/>
+  <rect class="cls-6" x="27" y="135" width="9" height="9"/>
+  <rect class="cls-6" x="18" y="117" width="9" height="9"/>
+  <rect class="cls-3" x="18" y="72" width="9" height="9"/>
+  <rect class="cls-3" x="189" y="72" width="9" height="9"/>
+  <rect class="cls-6" x="54" y="153" width="9" height="9"/>
+  <rect class="cls-6" x="45" y="162" width="9" height="9"/>
+  <rect class="cls-6" x="54" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="63" y="162" width="9" height="9"/>
+  <rect class="cls-6" x="72" y="162" width="9" height="9"/>
+  <rect class="cls-6" x="81" y="153" width="9" height="9"/>
+  <rect class="cls-6" x="90" y="144" width="9" height="9"/>
+  <rect class="cls-6" x="90" y="153" width="9" height="9"/>
+  <rect class="cls-6" x="81" y="162" width="9" height="9"/>
+  <rect class="cls-6" x="90" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="99" y="162" width="9" height="9"/>
+  <rect class="cls-6" x="108" y="153" width="9" height="9"/>
+  <rect class="cls-6" x="108" y="144" width="9" height="9"/>
+  <rect class="cls-6" x="117" y="162" width="9" height="9"/>
+  <rect class="cls-6" x="126" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="135" y="162" width="9" height="9"/>
+  <rect class="cls-6" x="126" y="153" width="9" height="9"/>
+  <rect class="cls-6" x="126" y="144" width="9" height="9"/>
+  <rect class="cls-6" x="135" y="153" width="9" height="9"/>
+  <rect class="cls-6" x="144" y="162" width="9" height="9"/>
+  <rect class="cls-6" x="153" y="153" width="9" height="9"/>
+  <rect class="cls-6" x="162" y="162" width="9" height="9"/>
+  <rect class="cls-6" x="153" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="36" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="99" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="108" y="162" width="9" height="9"/>
+  <rect class="cls-6" x="72" y="180" width="9" height="9"/>
+  <rect class="cls-6" x="135" y="180" width="9" height="9"/>
+  <rect class="cls-6" x="117" y="171" width="9" height="9"/>
+  <rect class="cls-5" x="45" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="45" y="180" width="9" height="9"/>
+  <rect class="cls-6" x="36" y="180" width="9" height="9"/>
+  <rect class="cls-5" x="81" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="72" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="81" y="180" width="9" height="9"/>
+  <rect class="cls-5" x="135" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="144" y="171" width="9" height="9"/>
+  <rect class="cls-5" x="162" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="171" y="171" width="9" height="9"/>
+  <rect class="cls-6" x="162" y="180" width="9" height="9"/>
+  <rect class="cls-6" x="144" y="180" width="9" height="9"/>
+</svg>
