@@ -7,36 +7,55 @@
   <link rel="stylesheet" href="../style.css"/>
 </head>
 
-<body class="detail-page">
-  <!-- Header (홈과 동일) -->
+<body class="detail-page earth">
+
+  <!-- ================= HEADER ================= -->
   <header class="header">
-    <button class="contact-btn">Contact me</button>
-    <div class="menu-icon">☰</div>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menuOverlay" aria-label="Open menu" type="button">
+      <span class="menu-icon" aria-hidden="true">☰</span>
+    </button>
   </header>
 
+  <!-- ================= MENU OVERLAY ================= -->
+  <div id="menuOverlay" class="menu-overlay" hidden>
+    <nav class="overlay-nav" role="dialog" aria-modal="true">
+      <a href="../index.html#heroArea" data-close>Home</a>
+      <a href="../index.html#portfolio" data-close>Portfolio</a>
+      <a href="../index.html#about" data-close>About</a>
+    </nav>
+  </div>
+
+  <!-- ================= MAIN ================= -->
   <main class="detail">
-    <!-- Title -->
+
+    <!-- ===== TITLE ===== -->
     <section class="detail-hero">
       <h1 class="detail-title">Earth Piece</h1>
     </section>
 
-    <!-- Main image (여백: .detail-media 패딩으로 처리) -->
-    <section class="detail-media" aria-labelledby="detail-title">
-      <figure class="detail-figure">
-        <img src="../images/earth_piece.jpeg" alt="Earth Piece main image">
-      </figure>
-    </section>
+    <!-- ===== MAIN IMAGE ===== -->
+    <section class="detail-media">
+  <div class="video-wrapper">
+    <iframe 
+      src="https://www.youtube.com/embed/JxHrv8aKH0s"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
 
-    <!-- Meta (타입/연도/프로젝트 유형) -->
+    <!-- ===== META ===== -->
     <section class="detail-meta" aria-label="Project meta">
       <ul class="meta-list">
-        <li><span>2D Motion graphics</span></li>
+        <li><span>2D Motion Graphics</span></li>
         <li><span>2025</span></li>
         <li><span>Personal Project</span></li>
       </ul>
     </section>
 
-    <!-- Description -->
+    <!-- ===== DESCRIPTION ===== -->
     <section class="detail-body" aria-labelledby="desc-heading">
       <h2 id="desc-heading">Description</h2>
       <p>
@@ -52,13 +71,12 @@
       </p>
     </section>
 
-    <!-- Horizontal strip: Sketch 1–5 -->
+    <!-- ===== SKETCH STRIP ===== -->
     <section class="detail-strip" aria-label="Sketch previews">
       <div class="strip-head">
-        <h3 class="strip-title">Sketches 1–5</h3>
+        <h3 class="strip-title"></h3>
         <span class="strip-hint" aria-hidden="true">Swipe →</span>
       </div>
-
       <div class="h-scroll" aria-label="Horizontal scroll gallery">
         <figure class="detail-thumb"><img src="../images/sketch1.png" alt="Sketch 1"></figure>
         <figure class="detail-thumb"><img src="../images/sketch2.png" alt="Sketch 2"></figure>
@@ -68,7 +86,7 @@
       </div>
     </section>
 
-    <!-- 추가 스틸 이미지 묶음 (여백: .detail-media 패딩으로 처리) -->
+    <!-- ===== STILLS GALLERY ===== -->
     <section class="detail-media" aria-label="Stills gallery">
       <figure class="detail-figure"><img src="../images/earth_piece.jpeg" alt="Main still"></figure>
       <figure class="detail-figure"><img src="../images/scene2.jpeg" alt="Scene 2"></figure>
@@ -77,32 +95,71 @@
       <figure class="detail-figure"><img src="../images/scene5.jpeg" alt="Scene 5"></figure>
     </section>
 
-    <!-- More projects -->
+    <!-- ===== MORE PROJECTS ===== -->
     <section class="works">
       <h2>More projects</h2>
 
-      <div class="work-card">
-        <a href="jangseung.html">
+      <!-- Wandering Jangseung -->
+      <div class="work-card jangseung">
+        <a href="jangseung.html" class="work-card-link" aria-label="Open Wandering Jangseung details">
           <img src="../images/wandering_jangseung.png" alt="Wandering Jangseung">
-          <div class="work-info">
-            <div class="title">Wandering Jangseung</div>
-          </div>
+          <div class="work-info"><div class="title">Wandering Jangseung</div></div>
+          <span class="details-btn"><img src="../images/details.svg" alt="Details"></span>
         </a>
       </div>
 
-      <div class="work-card">
-        <a href="out-of-an-egg.html">
+      <!-- Out of an egg -->
+      <div class="work-card out-egg">
+        <a href="out-of-an-egg.html" class="work-card-link" aria-label="Open Out of an egg details">
           <img src="../images/out_of_an_egg.png" alt="Out of an egg">
-          <div class="work-info">
-            <div class="title">Out of an egg</div>
-          </div>
+          <div class="work-info"><div class="title">Out of an egg</div></div>
+          <span class="details-btn"><img src="../images/details.svg" alt="Details"></span>
         </a>
       </div>
     </section>
+
   </main>
 
+  <!-- ================= FOOTER ================= -->
   <footer>
     <p>© 2025 Eunbeen</p>
   </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    const menuBtn  = document.querySelector('.menu-btn');
+    const overlay  = document.getElementById('menuOverlay');
+    const body     = document.body;
+
+    function openMenu(){
+      overlay.removeAttribute('hidden');
+      overlay.getBoundingClientRect();
+      overlay.classList.remove('closing');
+      overlay.classList.add('active');
+      menuBtn.setAttribute('aria-expanded','true');
+      body.classList.add('no-scroll');
+    }
+    function closeMenu(){
+      overlay.classList.remove('active');
+      overlay.classList.add('closing');
+      menuBtn.setAttribute('aria-expanded','false');
+      body.classList.remove('no-scroll');
+    }
+    overlay.addEventListener('animationend', ()=>{
+      if (overlay.classList.contains('closing')){
+        overlay.setAttribute('hidden','');
+        overlay.classList.remove('closing');
+      }
+    });
+    menuBtn.addEventListener('click', ()=>{
+      overlay.classList.contains('active') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', (e)=>{
+      if (e.target === overlay || e.target.hasAttribute('data-close')) closeMenu();
+    });
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape') closeMenu();
+    });
+  </script>
 </body>
 </html>
