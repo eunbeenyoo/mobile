@@ -1,32 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Wandering Jangseung</title>
   <link rel="stylesheet" href="../style.css">
 </head>
-<body class="detail-page">
-  <!-- Header -->
+<body class="detail-page jangseung">
+
+  <!-- ================= HEADER ================= -->
   <header class="header">
-    <button class="contact-btn">Contact me</button>
-    <div class="menu-icon">☰</div>
+    <button class="menu-btn" aria-expanded="false" aria-controls="menuOverlay" aria-label="Open menu" type="button">
+      <span class="menu-icon" aria-hidden="true">☰</span>
+    </button>
   </header>
 
-  <main class="detail">
-    <!-- 타이틀 -->
-    <section class="detail-hero">
-      <h1 class="detail-title">Wandering Jangseung</h1>
+  <!-- ================= MENU OVERLAY ================= -->
+  <div id="menuOverlay" class="menu-overlay" hidden>
+    <nav class="overlay-nav" role="dialog" aria-modal="true">
+      <a href="../index.html#heroArea" data-close>Home</a>
+      <a href="../index.html#portfolio" data-close>Portfolio</a>
+      <a href="../index.html#about" data-close>About</a>
+    </nav>
+  </div>
+
+  <!-- ================= MAIN ================= -->
+  <!-- Title -->
+<section class="detail-hero">
+  <h1 class="detail-title">Wandering Jangseung</h1>
+</section>
+
+<!-- 예: 장승 detail 안에서 -->
+<figure class="detail-figure video-wrapper">
+  <iframe
+    src="https://www.youtube.com/embed/MZoTFSooKm0?rel=0"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</figure>
+
+</section>
+
+    <!-- ===== META ===== -->
+    <section class="detail-meta">
+      <ul class="meta-list">
+        <li><span>Animated 3D Design</span></li>
+        <li><span>2025</span></li>
+        <li><span>Personal Project</span></li>
+      </ul>
     </section>
 
-    <!-- 메인 이미지 -->
-    <section class="detail-media">
-      <figure class="detail-figure">
-        <img src="../images/wandering_jangseung.png" alt="Wandering Jangseung">
-      </figure>
-    </section>
-
-    <!-- Description -->
+    <!-- ===== DESCRIPTION ===== -->
     <section class="detail-body">
       <h2>Description</h2>
       <p>
@@ -37,50 +62,145 @@
         watching over others.
       </p>
 
-      <!-- 추가 이미지들 -->
+      <!-- Sketch -->
       <figure class="detail-figure">
         <img src="../images/sketch_wjs.png" alt="Sketch of Wandering Jangseung">
       </figure>
-      <figure class="detail-figure">
-        <img src="../images/face_wjs.png" alt="Face of Wandering Jangseung">
-      </figure>
-      <figure class="detail-figure">
-        <img src="../images/front_gst.png" alt="Front of Guardian Spirit Totem">
-      </figure>
-      <!-- front_wjs.png 이미지 -->
-<figure class="detail-figure">
-  <img src="../images/front_wjs.png" alt="Front Wandering Jangseung">
-</figure>
 
-<!-- More Projects Section -->
-<section class="works">
-  <h2>More projects</h2>
+      <!-- Ghosts (Front / Back) -->
+      <section class="ghosts">
+        <div class="ghost-grid">
+          <figure class="ghost-card"><img src="../images/front_gst.png" alt="Ghost front view"></figure>
+          <figure class="ghost-card"><img src="../images/back_gst.png" alt="Ghost back view"></figure>
+        </div>
+      </section>
 
-  <!-- Earth Piece -->
-  <div class="work-card">
-    <a href="earth-piece.html">
-      <img src="../images/earth_piece.jpeg" alt="Earth Piece">
-      <div class="work-info">
-        <div class="title">Earth Piece</div>
-      </div>
-    </a>
-  </div>
+      <!-- Textures (Face / Cloth / Bag) -->
+      <section class="textures">
+        <div class="tex-grid">
+          <figure class="tex-card"><img src="../images/face_wjs.png" alt="Texture: face"></figure>
+          <figure class="tex-card"><img src="../images/cloth_wjs.png" alt="Texture: cloth"></figure>
+          <figure class="tex-card"><img src="../images/bag_wjs.png" alt="Texture: bag"></figure>
+        </div>
+      </section>
 
-  <!-- Out of an Egg -->
-  <div class="work-card">
-    <a href="out-of-an-egg.html">
-      <img src="../images/out_of_an_egg.png" alt="Out of an egg">
-      <div class="work-info">
-        <div class="title">Out of an egg</div>
-      </div>
-    </a>
-  </div>
+      <!-- Poses (Front / Side / Back) -->
+      <section class="poses">
+        <div class="pose-grid">
+          <figure class="pose-card"><img src="../images/front_wjs.png" alt="Front view of Wandering Jangseung"></figure>
+          <figure class="pose-card"><img src="../images/side_wjs.png" alt="Side view of Wandering Jangseung"></figure>
+          <figure class="pose-card"><img src="../images/back_wjs.png" alt="Back view of Wandering Jangseung"></figure>
+        </div>
+      </section>
     </section>
+
+    <!-- ===== MORE PROJECTS ===== -->
+    <section class="works">
+      <h2>More projects</h2>
+      <div class="work-card earth-piece">
+        <a href="earth-piece.html" class="work-card-link" aria-label="Open Earth Piece details">
+          <img src="../images/earth_piece.jpeg" alt="Earth Piece">
+          <div class="work-info"><div class="title">Earth Piece</div></div>
+          <span class="details-btn"><img src="../images/details.svg" alt="Details"></span>
+        </a>
+      </div>
+      <div class="work-card out-egg">
+        <a href="out-of-an-egg.html" class="work-card-link" aria-label="Open Out of an egg details">
+          <img src="../images/out_of_an_egg.png" alt="Out of an egg">
+          <div class="work-info"><div class="title">Out of an egg</div></div>
+          <span class="details-btn"><img src="../images/details.svg" alt="Details"></span>
+        </a>
+      </div>
+    </section>
+
   </main>
 
-  <!-- Footer -->
+  <!-- ================= FOOTER ================= -->
   <footer>
     <p>© 2025 Eunbeen</p>
   </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+
+  <!-- Menu -->
+  <script>
+    const menuBtn  = document.querySelector('.menu-btn');
+    const overlay  = document.getElementById('menuOverlay');
+    const body     = document.body;
+
+    function openMenu(){
+      overlay.removeAttribute('hidden');
+      overlay.getBoundingClientRect();
+      overlay.classList.remove('closing');
+      overlay.classList.add('active');
+      menuBtn.setAttribute('aria-expanded','true');
+      body.classList.add('no-scroll');
+    }
+    function closeMenu(){
+      overlay.classList.remove('active');
+      overlay.classList.add('closing');
+      menuBtn.setAttribute('aria-expanded','false');
+      body.classList.remove('no-scroll');
+    }
+    overlay.addEventListener('animationend', ()=>{
+      if (overlay.classList.contains('closing')){
+        overlay.setAttribute('hidden','');
+        overlay.classList.remove('closing');
+      }
+    });
+    menuBtn.addEventListener('click', ()=>{
+      overlay.classList.contains('active') ? closeMenu() : openMenu();
+    });
+    overlay.addEventListener('click', (e)=>{
+      if (e.target === overlay || e.target.hasAttribute('data-close')) closeMenu();
+    });
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'Escape') closeMenu();
+    });
+  </script>
+
+  <!-- Video Play / Pause -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const wrap  = document.querySelector(".video-wrap");
+      const video = document.getElementById("jangVideo");
+      const btn   = wrap?.querySelector(".video-play");
+
+      if (!wrap || !video || !btn) return;
+
+      function showPlayUI() { wrap.classList.remove("playing"); }
+      function hidePlayUI() { wrap.classList.add("playing"); }
+
+      function togglePlay() {
+        if (video.paused) {
+          video.play().then(hidePlayUI).catch(err => console.error("재생 실패:", err));
+        } else {
+          video.pause();
+        }
+      }
+
+      // 버튼 클릭
+      btn.addEventListener("click", togglePlay);
+      // 영상 클릭
+      video.addEventListener("click", togglePlay);
+      // 키보드 (Space / Enter)
+      document.addEventListener("keydown", (e) => {
+        const tag = (document.activeElement?.tagName || "").toLowerCase();
+        if (tag === "input" || tag === "textarea") return;
+        if (e.code === "Space" || e.code === "Enter") {
+          e.preventDefault();
+          togglePlay();
+        }
+      });
+
+      video.addEventListener("play", hidePlayUI);
+      video.addEventListener("pause", showPlayUI);
+      video.addEventListener("ended", () => {
+        showPlayUI();
+        video.currentTime = 0;
+      });
+    });
+  </script>
+
 </body>
 </html>
